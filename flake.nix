@@ -8,11 +8,11 @@
         inputs.disko.nixosModules.disko
         inputs.impermanence.nixosModules.impermanence
 
-        ./dae.nix
-        ./ltp-zbook-nix.nix
-        ./impermanence.nix
+        ./modules/hosts/dae.nix
+        ./lib/disko_layout/ltp-zbook-nix.nix
+        ./modules/hosts/impermanence.nix
 
-	./configuration.nix
+        ./hosts/ltp/zbook
       ];
     };
   };
