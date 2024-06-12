@@ -1,0 +1,78 @@
+{
+  "nodes": {
+    "disko": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1718008439,
+        "narHash": "sha256-nlh/2uD5p2SAdkn6Zuey20yaR5FFWvhL3poapDGNE4Y=",
+        "owner": "nix-community",
+        "repo": "disko",
+        "rev": "c1cfbfad7cb45f0c177b35b59ba67d1b5fc7ca82",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "disko",
+        "type": "github"
+      }
+    },
+    "impermanence": {
+      "locked": {
+        "lastModified": 1717932370,
+        "narHash": "sha256-7C5lCpiWiyPoIACOcu2mukn/1JRtz6HC/1aEMhUdcw0=",
+        "owner": "nix-community",
+        "repo": "impermanence",
+        "rev": "27979f1c3a0d3b9617a3563e2839114ba7d48d3f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "impermanence",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1717868076,
+        "narHash": "sha256-c83Y9t815Wa34khrux81j8K8ET94ESmCuwORSKm2bQY=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "cd18e2ae9ab8e2a0a8d715b60c91b54c0ac35ff9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1717974879,
+        "narHash": "sha256-GTO3C88+5DX171F/gVS3Qga/hOs/eRMxPFpiHq2t+D8=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "c7b821ba2e1e635ba5a76d299af62821cbcb09f3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "disko": "disko",
+        "impermanence": "impermanence",
+        "nixpkgs": "nixpkgs_2"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
