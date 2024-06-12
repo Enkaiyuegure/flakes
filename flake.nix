@@ -1,13 +1,14 @@
 {
   description = "Nix Flakes Configuration of Enkaiyuegure";
 
-  outputs = inputs @ { self, nixpkgs, disko, impermanence, ... }: {
-    nixosConfigurations."ltp-zbook-nix" = nixpkgs.lib.nixosSystem {
+  outputs = inputs @ { self, ... }: {
+    nixosConfigurations."ltp-zbook-nix" = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        disko.nixosModules.disko
-        impermanence.nixosModules.impermanence
+        inputs.disko.nixosModules.disko
+        inputs.impermanence.nixosModules.impermanence
 
+        ./dae.nix
         ./ltp-zbook-nix.nix
         ./impermanence.nix
 
