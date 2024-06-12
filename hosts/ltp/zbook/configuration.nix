@@ -84,6 +84,7 @@
       neovim
       wget
       curl
+      zellij
     ];
   };
   services.dbus.enable = true;
