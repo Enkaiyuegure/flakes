@@ -2,6 +2,10 @@
 # Maintainer: Enkaiyuegure [enkaiyuegure@outlook.com]
 # From : ryan4yin [xiaoyin_c@qq.com]
 
+#Mod1 - Alt
+#Mod2 - Num Lock
+#Mod4 - Super
+
 #######################
 # config starts here: #
 #######################
@@ -174,7 +178,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Return exec kitty
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym Mod1+q kill
 
 # exit-menu
 bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu

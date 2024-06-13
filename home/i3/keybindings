@@ -15,7 +15,7 @@ https://discovery.endeavouros.com/window-tiling-managers/i3-wm/
 +Return 
 
 # kill focused window
-+Shift+q
+Alt+q
 
 # Application menu search by typing (fancy Rofi menu):
 +d
