@@ -6,5 +6,6 @@
     ./i3
     ./programs
     ./rofi
+    ./terminal
   ];
 }

@@ -10,8 +10,6 @@
     yq-go    # https://github.com/mikefarah/yq
     htop
 
-    kitty
-
     google-chrome
   ];
 
