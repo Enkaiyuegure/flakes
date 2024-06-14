@@ -14,12 +14,14 @@
   boot = {
     bootspec.enable = true;
     loader = {
-      systemd-boot = {
+      grub = {
         enable = true;
-        consoleMode = "auto";
+	device = "nodev";
+	efiSupport = true;
+	efiInstallAsRemovable = true;
       };
       efi = {
-        canTouchEfiVariables = true;
+        #canTouchEfiVariables = true;
         efiSysMountPoint = "/boot/efi";
       };
       timeout = 3;
