@@ -11,6 +11,8 @@
     htop
 
     kitty
+
+    google-chrome
   ];
 
   programs = {
