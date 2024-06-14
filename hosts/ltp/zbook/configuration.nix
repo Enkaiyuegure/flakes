@@ -95,11 +95,15 @@
   users.mutableUsers = false;
   users.users.enkai = {
     shell = pkgs.nushell;
+    description = "Enkaiyuegure";
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" ];
     packages = with pkgs; [
       firefox
       tree
+    ];
+    openssh.authorizedKeys.keys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCYfzHsu8HcbQUNyLk0b7zOfy3tXk0gMsrgBi0u8CEHDncWgMxgQ77dgDLHXpcXEY3KaGHPDyTKtnCKv7hPVuRQjkbsaoHhiVJW7qcmEbCmuZgsllYqIn2I3mFO6Ubckdu+JWjfOkUhVRFl5ZG5eI4mqZFyjFdDlSGSiFmS81qB5ry6mGInzZYnJuROTwiei8vW2yTfAIloAFPghq8qTzrcuMUXL7gVinaxrU7jVozEtJe0KR07oBpr/jUaeomuzy3R29CPu6+BBxRAMo6U02NxtevI+n0d1i5PbXRuZ8xxwWVQzlwkL9DjHls1tHUlZkYvnvYzHU/FUMlRuELPK+M3LS+ILqzCkK2D32UmukcFrcXnNe9TQy/3D0WI+m8lK69n67tskqaD84wxNAbnMjHMUcbX02BOXl+qTcG0nGP1cMbZrWvXbwkqhW4N6a97EKLxpOIA1gBQ3K6CFStdtKeXzMSkgfPap85x5cr3Zg03ZNOtw2QrZuCrAhO1JZHhF2Eqgx+kbmQGttouAs6Ftj1AX3ZNpTOXWk5Ryd6nH6SW68uv+u+ehUaU8n4TsmAAX27cX19K6IpKFJlKL6VB/BjtnyHj+HyjR0vDsSE5pdCiDY+bFPw0lkNn2vZE9UMUUepRSvi+qKmSI+9ZLpd/o6ZIclT/SHyLVOSnYSXnSzAetQ== enkaiyuegure@outlook.com"
     ];
   };
 
