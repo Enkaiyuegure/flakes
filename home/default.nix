@@ -7,5 +7,6 @@
     ./programs
     ./rofi
     ./terminal
+    ./shell
   ];
 }
