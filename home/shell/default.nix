@@ -1,11 +1,11 @@
 let
-  aliases = {
+  shellAliases = {
     "vi" = "nvim";
   };
 in
 {
   imports = [
-    { _module.args = { inherit aliases; }; }
+    { _module.args = { inherit shellAliases; }; }
 
     ./nu
   ];
