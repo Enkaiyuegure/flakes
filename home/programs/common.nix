@@ -11,6 +11,21 @@
     htop
 
     google-chrome
+
+    #dev
+      #cs
+      kubernetes
+      k9s
+      kubectl
+
+      #ee
+      kicad
+      ngspice
+      freecad
+      librecad
+      scilab-bin
+      nasm
+      platformio
   ];
 
   programs = {
