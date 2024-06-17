@@ -33,7 +33,7 @@
   networking.hostName = "ltp-zbook-nix"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
@@ -81,7 +81,7 @@
 
   environment = {
     binsh = "${pkgs.dash}/bin/dash";
-    shells = with pkgs; [ nushell ];
+    shells = with pkgs; [ fish ];
     systemPackages = with pkgs; [
       git
       neovim
@@ -93,8 +93,9 @@
   services.dbus.enable = true;
 
   users.mutableUsers = false;
+  programs.fish.enable = true;
   users.users.enkai = {
-    shell = pkgs.nushell;
+    shell = pkgs.fish;
     description = "Enkaiyuegure";
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" ];
