@@ -90,6 +90,7 @@
       zellij
       cargo
       gcc
+      glow
     ];
   };
   services.dbus.enable = true;
