@@ -19,6 +19,9 @@ font pango: Noto Sans Regular 10
 # set the mod key to the winkey:
 set $mod Mod4
 
+# control focused window when follows the mouse movements
+focus_follows_mouse yes
+
 #####################
 # workspace layout: #
 #####################
