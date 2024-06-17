@@ -3,6 +3,7 @@
 > This Configuration is work in progress  
 
 ## TODO
-1. add graphical interface, like hyprland  
-2. add nvim configuration  
-3. add emacs configuration  
+1. add nvim configuration  
+2. add dev environment
+3. add emacs configuration
+4. add hyprland
