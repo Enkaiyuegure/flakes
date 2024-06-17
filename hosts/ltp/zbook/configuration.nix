@@ -88,6 +88,8 @@
       wget
       curl
       zellij
+      cargo
+      gcc
     ];
   };
   services.dbus.enable = true;

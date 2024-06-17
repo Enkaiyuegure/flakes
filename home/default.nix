@@ -8,5 +8,6 @@
     ./rofi
     ./terminal
     ./shell
+    ./editors
   ];
 }
