@@ -262,6 +262,16 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
 
+#####################
+# scratchpad window #
+#####################
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# show the next scratchpad window or hide the focused scratchpad window
+bindsym $mod+minus scratchpad show
+
 # open new empty workspace
 bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace
 
