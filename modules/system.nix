@@ -69,12 +69,18 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  services = {
+    auto-cpufreq.enable = true;
+    tlp.enable = true;
+    xserver.videoDrivers = [ "amdgpu" ];
+  };
+
   # Enable sound with pipewire.
   #sound.enable = true;
   #hardware.pulseaudio.enable = false;
-  services.power-profiles-daemon = {
-    enable = true;
-  };
+  #services.power-profiles-daemon = {
+  #  enable = true;
+  #};
   security.polkit.enable = true;
 
   services = {
