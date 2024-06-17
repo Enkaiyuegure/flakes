@@ -3,7 +3,10 @@
 > This Configuration is work in progress  
 
 ## TODO
-1. add nvim configuration  
-2. add dev environment
-3. add emacs configuration
-4. add hyprland
+1. change i3blocks to polybar
+2. modular configuartions
+3. add nvim configuration  
+4. add dev environment
+5. add emacs configuration
+6. add hyprland
+7. add more hosts
