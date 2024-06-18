@@ -87,7 +87,6 @@
       neovim
       wget
       curl
-      zellij
       cargo
       gcc
       glow
