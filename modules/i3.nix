@@ -1,8 +1,5 @@
 {pkgs, ...}:
-
-
 {
-
   # i3 related options
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
   services = {
