@@ -1,6 +1,7 @@
 let
   shellAliases = {
     "vi" = "nvim";
+    "et" = "emacs -nw"
   };
 in
 {
