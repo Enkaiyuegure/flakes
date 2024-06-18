@@ -3,7 +3,7 @@
     ./base/home.nix
 
     ./fcitx5
-    ./i3
+    ./wm
     ./programs
     ./rofi
     ./terminal
