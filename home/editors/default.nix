@@ -1,7 +1,7 @@
 {
   imports = [
     ./neovim
-    ./emacs
+    ./doomemacs
     ./typora
   ];
 }
