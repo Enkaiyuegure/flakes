@@ -4,6 +4,11 @@ let
     "et" = "emacs -nw";
 
     "rm" = "bash /home/enkai/flakes/lib/scripts/rm-to-trash.sh";
+
+    # git
+    "ga" = "git add";
+    "gs" = "git status";
+    "gc" = "git commit";
   };
 in
 {
