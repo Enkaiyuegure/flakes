@@ -14,7 +14,6 @@
 
     # fun
     fastfetch
-    xev
 
     #dev
       #cs
