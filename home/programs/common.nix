@@ -12,6 +12,9 @@
 
     google-chrome
 
+    # fun
+    fastfetch
+
     #dev
       #cs
       kubernetes
