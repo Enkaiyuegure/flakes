@@ -6,6 +6,7 @@
 - change i3blocks to polybar
 - modular configuartions
 - add dev environment
-- add emacs configuration
 - add hyprland
 - add more hosts
+- add my own neovim configuration without using a framework
+- add my own emacs configuration without using a framework
