@@ -10,8 +10,6 @@
     yq-go    # https://github.com/mikefarah/yq
     htop
 
-    google-chrome
-
     # fun
     fastfetch
 
