@@ -4,7 +4,7 @@
 
 ## TODO
 - change i3blocks to polybar
-- modular configuartions
+- modular configuartions(use flake-utils-plus or flake-parts)
 - add dev environment
 - add hyprland
 - add more hosts
