@@ -19,6 +19,13 @@
       k9s
       kubectl
 
+        # Jetbrains
+        jetbrains.clion
+        jetbrains.goland
+        jetbrains.idea-ultimate
+        jetbrains.pycharm-professional
+        jetbrains.webstorm
+
       #ee
       kicad
       ngspice
