@@ -19,6 +19,8 @@
       k9s
       kubectl
 
+      nodejs_22
+
         # Jetbrains
         jetbrains.clion
         jetbrains.goland
