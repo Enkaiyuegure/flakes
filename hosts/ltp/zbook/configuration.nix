@@ -90,8 +90,6 @@
       cargo
       gcc
       glow
-
-      hugo
     ];
   };
   services.dbus.enable = true;
