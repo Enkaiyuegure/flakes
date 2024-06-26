@@ -21,6 +21,7 @@
 
       nodejs_22
       nodePackages_latest.gatsby-cli
+      hugo
 
         # Jetbrains
         jetbrains.clion
