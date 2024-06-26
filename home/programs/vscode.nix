@@ -93,7 +93,7 @@
       # redhat.vscode-xml
       # redhat.vscode-yaml
       # rust-lang.rust-analyzer
-      # shd101wyy.markdown-preview-enhanced
+      shd101wyy.markdown-preview-enhanced
       # sumneko.lua
       # tamasfe.even-better-toml
       # timonwong.shellcheck
