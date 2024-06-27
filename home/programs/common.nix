@@ -13,6 +13,10 @@
     # fun
     fastfetch
 
+    # communication
+    qq
+    
+
     #dev
       #cs
       kubernetes
