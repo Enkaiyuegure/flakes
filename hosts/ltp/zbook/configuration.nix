@@ -90,6 +90,7 @@
       cargo
       gcc
       glow
+      nix-output-monitor
     ];
   };
   services.dbus.enable = true;
