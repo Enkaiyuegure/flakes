@@ -15,7 +15,7 @@
 
     # communication
     qq
-    
+    thunderbird 
 
     #dev
       #cs
