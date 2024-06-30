@@ -9,6 +9,9 @@ let
     "ga" = "git add";
     "gs" = "git status";
     "gc" = "git commit";
+
+    # fun
+    "n" = "fastfetch";
   };
 in
 {
