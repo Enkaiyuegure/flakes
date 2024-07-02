@@ -4,6 +4,7 @@
 
 ## TODO
 - change i3blocks to polybar
+- optimize the window rules for i3
 - modular configuartions(use flake-utils-plus or flake-parts)
   - Now use flake-parts
   - gradually expand it to the entire configuration
