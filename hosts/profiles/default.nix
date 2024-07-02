@@ -19,7 +19,7 @@
 	    useGlobalPkgs = true;
 	    useUserPackages = true;
 	    extraSpecialArgs = inputs;
-	    users.enkai = import ./home;
+	    users.enkai = import ../../home;
 	  };
 	}
       ];
