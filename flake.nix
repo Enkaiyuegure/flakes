@@ -3,6 +3,7 @@
 
   outputs = inputs @ { self, ... }: 
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      debug = true;
       flake = {
         
       };
