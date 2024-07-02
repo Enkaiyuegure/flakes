@@ -1,22 +1,21 @@
 {
   description = "Nix Flakes Configuration of Enkaiyuegure";
 
-  outputs = inputs @ { self, ... }: 
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      debug = true;
-      flake = {
-        
-      };
-      imports = [
-        ./hosts/profiles
-      ];
-      systems = [
-        "x86_64-linux"
-      ];
-      perSystem = { config, ... }: {
-
-      };
+  outputs = inputs @ { self, ... }: inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+    debug = true;
+    flake = {
+      
     };
+    imports = [
+      ./hosts/profiles
+    ];
+    systems = [
+      "x86_64-linux"
+    ];
+    perSystem = { config, ... }: {
+
+    };
+  };
 
   inputs = {
     #-- nixpkgs -- Nix packages collection & NixOS
