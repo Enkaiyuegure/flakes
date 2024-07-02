@@ -44,6 +44,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     #-- flake-parts -- Simplify Nix Flakes with the module system
     flake-parts.url = "github:hercules-ci/flake-parts";
+    #-- flake-root -- A `flake-parts` module for finding your way to the project root directory
+    flake-root.url = "github:srid/flake-root";
     };
 
     #-- disko -- Declarative disk partitioning and formatting using nix
