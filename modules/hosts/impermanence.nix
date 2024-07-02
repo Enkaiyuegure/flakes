@@ -3,6 +3,7 @@
     persistence = {
       "/persist" = {
         directories = [
+          "/etc/nixos"
           "/etc/NetworkManager/system-connections"
           "/var/log"
           "/var/lib"
