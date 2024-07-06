@@ -6,6 +6,8 @@ let
     "rm" = "bash /home/enkai/flakes/lib/scripts/rm-to-trash.sh";
     "clear trash" = "sudo rm /.trash/* -r";
 
+    "rebuild" = "bash /home/enkai/flakes/lib/scripts/nix-rebuild.sh";
+
     # git
     "ga" = "git add";
     "gs" = "git status";
