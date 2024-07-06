@@ -4,6 +4,7 @@ let
     "et" = "emacs -nw";
 
     "rm" = "bash /home/enkai/flakes/lib/scripts/rm-to-trash.sh";
+    "clear trash" = "sudo rm /.trash/* -r";
 
     # git
     "ga" = "git add";
