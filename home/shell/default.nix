@@ -3,10 +3,11 @@ let
     "vi" = "nvim";
     "et" = "emacs -nw";
 
-    "rm" = "bash /home/enkai/flakes/lib/scripts/rm-to-trash.sh";
+    "rm" = "bash ~/flakes/lib/scripts/rm-to-trash.sh";
     "clear-trash" = "sudo rm /.trash/* -r";
 
-    "rebuild" = "bash /home/enkai/flakes/lib/scripts/nix-rebuild.sh";
+    "rebuild" = "sudo nixos-rebuild switch --flake ~/flakes#";
+    "change-build" = "bash ~/flakes/lib/scripts/nix-rebuild.sh";
 
     # git
     "ga" = "git add";
