@@ -4,7 +4,7 @@ let
     "et" = "emacs -nw";
 
     "rm" = "bash /home/enkai/flakes/lib/scripts/rm-to-trash.sh";
-    "clear trash" = "sudo rm /.trash/* -r";
+    "clear-trash" = "sudo rm /.trash/* -r";
 
     "rebuild" = "bash /home/enkai/flakes/lib/scripts/nix-rebuild.sh";
 
