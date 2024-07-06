@@ -151,6 +151,8 @@
       options = "--delete-older-than 2d";
     };
   };
+  
+  boot.kernelPackages = pkgs.linuxPackages_lqx;
 
   # List services that you want to enable:
 
