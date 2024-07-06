@@ -7,7 +7,7 @@
       
     };
     imports = [
-      ./hosts/profiles
+      ./hosts
     ];
     systems = [
       "x86_64-linux"

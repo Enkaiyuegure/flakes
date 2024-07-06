@@ -7,11 +7,11 @@
         inputs.disko.nixosModules.disko
         inputs.impermanence.nixosModules.impermanence
 
-        ../../modules/hosts/dae.nix
-        ../../lib/disko_layout/ltp-zbook-nix.nix
-        ../../modules/hosts/impermanence.nix
+        ../modules/hosts/dae.nix
+        ../lib/disko_layout/ltp-zbook-nix.nix
+        ../modules/hosts/impermanence.nix
 
-        ../ltp/zbook
+        ./ltp/zbook
 
 	inputs.home-manager.nixosModules.home-manager
 	{
@@ -19,7 +19,7 @@
 	    useGlobalPkgs = true;
 	    useUserPackages = true;
 	    extraSpecialArgs = inputs;
-	    users.enkai = import ../../home;
+	    users.enkai = import ../home;
 	  };
 	}
       ];
