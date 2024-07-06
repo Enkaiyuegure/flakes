@@ -61,8 +61,8 @@ gaps outer 3
 floating_modifier $mod
 
 # switch/iterate between workspaces
-bindsym Mod1+Left workspace next
-bindsym Mod1+Right workspace prev
+bindsym Mod1+Right workspace next
+bindsym Mod1+Left workspace prev
 
 #######################
 # switch to workspace #
