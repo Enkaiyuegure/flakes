@@ -152,7 +152,7 @@
     };
   };
   
-  boot.kernelPackages = pkgs.linuxPackages_lqx;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # List services that you want to enable:
 
