@@ -9,7 +9,7 @@
   - Now use flake-parts
   - gradually expand it to the entire configuration
 - add dev environment
-- add hyprland
+- try dwm/dwl hyprland
 - add more hosts
 - add my own neovim configuration without using a framework
 - add my own emacs configuration without using a framework
