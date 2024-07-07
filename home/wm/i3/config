@@ -16,6 +16,8 @@
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango: Noto Sans Regular 10
 
+exec --no-startup-id autotiling
+
 # set the mod key to the winkey:
 set $mod Mod4
 

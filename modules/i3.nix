@@ -34,6 +34,7 @@
           xorg.xbacklight  # control screen brightness
           xorg.xdpyinfo      # get screen information
           sysstat       # get system information
+          autotiling # automatically switch the horizontal / vertical window split orientation
        ];
       };
 
