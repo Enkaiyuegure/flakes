@@ -4,6 +4,8 @@
     bind =
       [
         "$mod, F, exec, firefox"
+        "$mod, return, exec, kitty"
+        "Alt, Q, killactive"
         ", Print, exec, grimblast copy area"
       ]
       ++ (
