@@ -8,6 +8,8 @@
     };
     imports = [
       ./hosts
+      ./home/profiles
+      ./modules
     ];
     systems = [
       "x86_64-linux"
