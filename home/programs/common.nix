@@ -12,6 +12,7 @@
 
     # fun
     fastfetch
+    go-musicfox
 
     # communication
     qq
