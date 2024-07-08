@@ -9,11 +9,6 @@
       desktopManager = {
         xterm.enable = false;
       };
-   
-      displayManager = {
-        lightdm.enable = false;
-        gdm.enable = true;
-      };
 
       windowManager.i3 = {
         enable = true;
