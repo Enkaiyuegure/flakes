@@ -1,14 +1,12 @@
+{ userName, ... }:
 {
-  imports = [
-    ./base/home.nix
+  home = {
+    username = "${userName}";
+    homeDirectory = "/home/${userName}";
+    language.base = "en_US.UTF-8";
 
-    ./wall
-    ./fcitx5
-    ./wm
-    ./programs
-    ./rofi
-    ./terminal
-    ./shell
-    ./editors
-  ];
+    stateVersion = "24.05";
+  };
+
+  programs.home-manager.enable = true;
 }
