@@ -26,6 +26,8 @@
 
     gdb
 
+    mitscheme
+
     nodejs_22
     nodePackages_latest.gatsby-cli
     hugo
