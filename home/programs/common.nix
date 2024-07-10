@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     # archives
     zip
@@ -7,7 +7,7 @@
 
     # utils
     ripgrep
-    yq-go    # https://github.com/mikefarah/yq
+    yq-go # https://github.com/mikefarah/yq
     htop
 
     # fun
@@ -16,33 +16,35 @@
 
     # communication
     qq
-    thunderbird 
+    thunderbird
 
     #dev
-      #cs
-      kubernetes
-      k9s
-      kubectl
+    #cs
+    kubernetes
+    k9s
+    kubectl
 
-      nodejs_22
-      nodePackages_latest.gatsby-cli
-      hugo
+    gdb
 
-        # Jetbrains
-        jetbrains.clion
-        jetbrains.goland
-        jetbrains.idea-ultimate
-        jetbrains.pycharm-professional
-        jetbrains.webstorm
+    nodejs_22
+    nodePackages_latest.gatsby-cli
+    hugo
 
-      #ee
-      kicad
-      ngspice
-      freecad
-      librecad
-      scilab-bin
-      nasm
-      platformio
+    # Jetbrains
+    jetbrains.clion
+    jetbrains.goland
+    jetbrains.idea-ultimate
+    jetbrains.pycharm-professional
+    jetbrains.webstorm
+
+    #ee
+    kicad
+    ngspice
+    freecad
+    librecad
+    scilab-bin
+    nasm
+    platformio
   ];
 
   programs = {
@@ -53,9 +55,9 @@
       };
     };
 
-    btop.enable = true;  # replacement of htop/nmon
-    eza.enable = true;   # A modern replacement for ‘ls’
-    jq.enable = true;    # A lightweight and flexible command-line JSON processor
+    btop.enable = true; # replacement of htop/nmon
+    eza.enable = true; # A modern replacement for ‘ls’
+    jq.enable = true; # A lightweight and flexible command-line JSON processor
     ssh.enable = true;
     aria2.enable = true;
 
