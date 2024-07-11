@@ -3,20 +3,16 @@
 
   outputs = inputs @ { self, ... }: inputs.flake-parts.lib.mkFlake { inherit inputs; } {
     debug = true;
-    flake = {
-      
-    };
+    flake = { };
     imports = [
-      ./hosts
+      ./hosts/profiles
       ./home/profiles
       ./modules
     ];
     systems = [
       "x86_64-linux"
     ];
-    perSystem = { config, ... }: {
-
-    };
+    perSystem = { config, ... }: { };
   };
 
   inputs = {
