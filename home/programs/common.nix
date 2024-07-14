@@ -13,6 +13,7 @@
     # fun
     fastfetch
     go-musicfox
+    prismlauncher
 
     # communication
     qq
