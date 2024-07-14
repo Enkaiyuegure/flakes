@@ -12,6 +12,8 @@ let
   };
 in
 {
+
+  home.file.".config/i3/wallpaper.jpg".source = wallpaper;
   systemd.user.services = {
     swww = {
       Unit = {
