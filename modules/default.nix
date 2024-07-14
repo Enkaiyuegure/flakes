@@ -1,15 +1,18 @@
-{ self, inputs, user, ... }:
+{ self, inputs, ... }:
 let
   #system-agnostic args
   module_args._module.args = {
     inherit inputs self;
   };
+
+  userName = "enkai";
 in
 {
   imports = [
     {
       _module.args = {
         inherit module_args;
+        inherit userName;
 
         #NixOS modules
         hostModules = [
@@ -24,6 +27,12 @@ in
           inputs.impermanence.nixosModules.impermanence
           module_args
           ./system.nix
+        ];
+
+        #HomeManager modules
+        homeModules = [
+          (import ./home { inherit userName; })
+          module_args
         ];
       };
     }
