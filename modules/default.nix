@@ -24,12 +24,9 @@ in
           inputs.impermanence.nixosModules.impermanence
           module_args
           ./system.nix
-          ./i3.nix
         ];
       };
     }
   ];
-  flake.nixosModules = {
-
-  };
+  flake.nixosModules = { };
 }
