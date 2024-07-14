@@ -1,12 +1,5 @@
-{ inputs, withSystem, module_args, ... }:
+{ inputs, withSystem, homeModules, userName, ... }:
 let
-  userName = "enkai";
-
-  homeModules = [
-    (import ../. { inherit userName; })
-    module_args
-  ];
-
   homeImports = {
     "${userName}@ltp-zbook-nix" = [ ./ltp-zbook-nix ] ++ homeModules;
   };
@@ -15,7 +8,7 @@ let
 in
 {
   imports = [
-    { _module.args = { inherit homeImports userName; }; }
+    { _module.args = { inherit homeImports; }; }
   ];
 
   flake = {
