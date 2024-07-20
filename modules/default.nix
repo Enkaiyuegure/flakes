@@ -27,6 +27,7 @@ in
           inputs.impermanence.nixosModules.impermanence
           module_args
           ./system.nix
+          ./hosts
         ];
 
         #HomeManager modules
