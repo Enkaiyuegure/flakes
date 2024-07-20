@@ -1,5 +1,5 @@
 {
   imports = [
-    ../../../wm/i3.nix
+    ../../wm/i3.nix
   ];
 }
