@@ -12,4 +12,8 @@
       xdg-desktop-portal-gtk
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    anyrun
+  ];
 }
