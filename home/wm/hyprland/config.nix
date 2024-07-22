@@ -1,14 +1,5 @@
 { pkgs, config, lib, ... }:
-let
-  launch_waybar = pkgs.writeShellScriptBin "launch_waybar" ''
-    killall .waybar-wrapped
-    ${pkgs.waybar}/bin/waybar > /dev/null 2>&1 &
-  '';
-in
 {
-  imports = [
-    ../../programs/waybar/hyprland_waybar.nix
-  ];
 
   wayland.windowManager.hyprland = {
     extraConfig = ''
@@ -251,7 +242,6 @@ in
       #---------------#
       # waybar toggle #
       #---------------#
-      bind=Super,O,exec,killall -SIGUSR1 .waybar-wrapped
 
       #---------------#
       # resize window #
@@ -289,7 +279,6 @@ in
       #------------#
       # auto start #
       #------------#
-      exec-once = ${launch_waybar}/bin/launch_waybar &
       exec-once = mako &
       exec-once = nm-applet &
 
