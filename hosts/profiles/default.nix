@@ -9,11 +9,6 @@
         specialArgs = { inherit userName; };
         modules = [
           ./ltp-zbook-nix
-
-          ../../modules/hosts/dae.nix
-          ../../lib/disko_layout/ltp-zbook-nix.nix
-          ../../modules/hosts/impermanence.nix
-
           {
             home-manager = {
               extraSpecialArgs = inputs;
