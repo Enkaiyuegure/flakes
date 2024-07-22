@@ -2,7 +2,8 @@
   imports = [
     #./nvim
     ./neovim
-    ./doomemacs
+    #./doomemacs
+    ./emacs
     ./typora
   ];
 }
