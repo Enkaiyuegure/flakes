@@ -15,10 +15,8 @@
         extraPackages = with pkgs; [
           rofi # application launcher, the same as dmenu
           dunst # notification daemon
-          i3blocks # status bar
           i3lock # default i3 screen locker
           xautolock # lock screen after some time
-          i3status # provide information to i3bar
           polybar # A fast and easy-to-use tool for creating status bars
           i3-gaps # i3 with gaps
           picom # transparency and shadows
