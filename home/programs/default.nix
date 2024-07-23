@@ -1,7 +1,4 @@
-{ config
-, pkgs
-, ...
-}: {
+{
   imports = [
     ./browsers
     ./common.nix
@@ -9,7 +6,6 @@
     ./media.nix
     ./vscode.nix
     ./xdg.nix
-    ./rofi
     ./fcitx5
   ];
 }
