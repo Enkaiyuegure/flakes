@@ -33,6 +33,15 @@
     disko.url = "github:nix-community/disko";
     #-- impermanence -- Modules to help you handle persistent state on systems with ephemeral root storage
     impermanence.url = "github:nix-community/impermanence";
+    flake-registry = {
+      url = "github:NixOS/flake-registry";
+      flake = false;
+    };
+    nur.url = "github:nix-community/NUR";
+    nix-index-database = {
+      url = "github:Mic92/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nvim-flake.url = "github:Ruixi-rebirth/nvim-flake";
     nixd.url = "github:nix-community/nixd";
