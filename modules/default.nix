@@ -28,6 +28,7 @@ in
           module_args
           ./system.nix
           ./hosts
+          ./core.nix
         ];
 
         #HomeManager modules
