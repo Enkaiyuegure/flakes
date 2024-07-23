@@ -1,0 +1,3 @@
+{
+  programs.polybar.enable = true;
+}
