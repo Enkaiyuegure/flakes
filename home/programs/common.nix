@@ -1,17 +1,11 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    # archives
-    zip
-    unzip
-    p7zip
-
     # utils
     ripgrep
     yq-go # https://github.com/mikefarah/yq
     htop
 
     # fun
-    fastfetch
     go-musicfox
     prismlauncher
 
@@ -24,8 +18,6 @@
     kubernetes
     k9s
     kubectl
-
-    gdb
 
     mitscheme
 

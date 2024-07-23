@@ -1,24 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "zh_CN.UTF-8";
-    LC_IDENTIFICATION = "zh_CN.UTF-8";
-    LC_MEASUREMENT = "zh_CN.UTF-8";
-    LC_MONETARY = "zh_CN.UTF-8";
-    LC_NAME = "zh_CN.UTF-8";
-    LC_NUMERIC = "zh_CN.UTF-8";
-    LC_PAPER = "zh_CN.UTF-8";
-    LC_TELEPHONE = "zh_CN.UTF-8";
-    LC_TIME = "zh_CN.UTF-8";
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
-  
+
 
   fonts = {
     packages = with pkgs; [
@@ -53,21 +38,6 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = false;
-
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    settings = {
-      X11Forwarding = true;
-      PermitRootLogin = "no";         # disable root login
-      PasswordAuthentication = false; # disable password login
-    };
-    openFirewall = true;
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   services = {
     auto-cpufreq.enable = true;
@@ -81,7 +51,7 @@
   #services.power-profiles-daemon = {
   #  enable = true;
   #};
-  security.polkit.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   services = {
     dbus.packages = [ pkgs.gcr ];
