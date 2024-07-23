@@ -6,5 +6,6 @@
     ../../terminal
     ../../shell
     ../../editors
+    ../../launcher
   ];
 }
