@@ -43,6 +43,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Add git hooks to format nix code before commit
+    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     nvim-flake.url = "github:Ruixi-rebirth/nvim-flake";
     nixd.url = "github:nix-community/nixd";
   };
