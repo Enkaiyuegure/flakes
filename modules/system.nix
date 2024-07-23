@@ -51,7 +51,6 @@
   #services.power-profiles-daemon = {
   #  enable = true;
   #};
-  nixpkgs.config.allowUnfree = true;
 
   services = {
     dbus.packages = [ pkgs.gcr ];

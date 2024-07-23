@@ -29,6 +29,7 @@ in
           ./system.nix
           ./hosts
           ./core.nix
+          ./nix.nix
         ];
 
         #HomeManager modules
