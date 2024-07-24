@@ -7,5 +7,6 @@
     ./vscode.nix
     ./xdg.nix
     ./fcitx5
+    ./ranger.nix
   ];
 }
