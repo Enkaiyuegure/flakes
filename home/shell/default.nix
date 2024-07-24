@@ -9,6 +9,8 @@ let
     "rebuild" = "sudo nixos-rebuild switch --flake ~/flakes#";
     "change-build" = "bash ~/flakes/lib/scripts/nix-rebuild.sh";
 
+    "r" = "ranger";
+
     # git
     "ga" = "git add";
     "gs" = "git status";
@@ -16,6 +18,7 @@ let
 
     # fun
     "n" = "fastfetch";
+
   };
 in
 {
