@@ -50,6 +50,10 @@ new_window pixel 1
 # hide_edge_borders both
 
 # Set inner/outer gaps
+gaps top 0
+gaps bottom 0
+gaps left 0
+gaps right 0
 gaps inner 6
 gaps outer 3
 
