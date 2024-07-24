@@ -18,6 +18,11 @@
   inputs = {
     #-- nixpkgs -- Nix packages collection & NixOS
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    #-- nixpkgs-stable -- Nix stable packages
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    #-- nixpkgs-unstable -- Nix unstable packages
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable-small";
+
     #-- home-manager -- Manage a user environment using Nix
     home-manager = {
       url = "github:nix-community/home-manager";
