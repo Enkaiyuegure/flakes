@@ -1,0 +1,3 @@
+{
+  programs.ranger.enable = true;
+}
