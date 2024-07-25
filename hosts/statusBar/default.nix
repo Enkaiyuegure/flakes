@@ -1,5 +1,5 @@
 {
   imports = [
-    ./polybar
+    ./polybar.nix
   ];
 }

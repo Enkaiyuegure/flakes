@@ -1,3 +1,6 @@
+{ pkgs, ... }:
 {
-  programs.polybar.enable = true;
+  environment.systemPackages = with pkgs; [
+    polybarFull
+  ];
 }
