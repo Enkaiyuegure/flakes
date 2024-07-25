@@ -16,7 +16,6 @@
           dunst # notification daemon
           i3lock # default i3 screen locker
           xautolock # lock screen after some time
-          polybar # A fast and easy-to-use tool for creating status bars
           i3-gaps # i3 with gaps
           picom # transparency and shadows
           feh # set wallpaper
