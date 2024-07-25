@@ -242,6 +242,7 @@
       #---------------#
       # waybar toggle #
       #---------------#
+      exec-once=waybar
 
       #---------------#
       # resize window #
