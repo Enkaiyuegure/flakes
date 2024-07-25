@@ -7,5 +7,6 @@
     ../../shell
     ../../editors
     ../../launcher
+    ../../statusBar
   ];
 }

@@ -523,6 +523,11 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 #	}
 #}
 
+###########
+# polybar #
+###########
+exec --no-startup-id bash ~/.config/polybar/launch.sh
+
 #####################################
 # Application menu handled by rofi: #
 #####################################
