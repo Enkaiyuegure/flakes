@@ -36,6 +36,7 @@ in
         homeModules = [
           (import ./home { inherit userName; })
           module_args
+          inputs.anyrun.homeManagerModules.anyrun
         ];
       };
     }
