@@ -34,6 +34,11 @@
     #-- flake-root -- A `flake-parts` module for finding your way to the project root directory
     flake-root.url = "github:srid/flake-root";
 
+    anyrun = {
+      url = "github:Kirottu/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     #-- disko -- Declarative disk partitioning and formatting using nix
     disko.url = "github:nix-community/disko";
     #-- impermanence -- Modules to help you handle persistent state on systems with ephemeral root storage
