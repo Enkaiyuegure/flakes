@@ -53,11 +53,15 @@ done
 
 while true; do
 	echo "Need tp set password for user? which host?"
+	echo "0. none"
 	echo "1. ltp-zbook-nix"
 	echo "2. tower-qtj1-nix"
 	read -p $'\e[1;32mEnter your choice(number): \e[0m' -r user_passwd_choice
 
 	case $user_passwd_choice in
+	0)
+		break
+		;;
 	1)
 		set_user_passwd
 		sed -i "/initialHashedPassword/c\ \ \ \ initialHashedPassword\ =\ \"$user_passwd_hash\";" ./hosts/profiles/ltp-zbook-nix/password/home.nix
@@ -75,7 +79,7 @@ while true; do
 done
 
 while true; do
-	echo "please select the device you wish to install:"
+	echo "Please select the device you wish to install:"
 	echo "1. ltp-zbook-nix"
 	echo "2. tower-qtj1-nix"
 	read -p $'\e[1;32mEnter your choice(number): \e[0m' -r device
