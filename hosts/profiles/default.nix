@@ -18,8 +18,16 @@
         ] ++ hostModules;
       };
       "tower-qtj1-nix" = nixosSystem {
+        specialArgs = { inherit userName; };
         modules = [
-        ];
+          ./tower-qtj1-nix
+          {
+            home-manager = {
+              extraSpecialArgs = inputs;
+              users.${userName}.imports = homeImports."${userName}@tower-qtj1-nix";
+            };
+          }
+        ] ++ hostModules;
       };
     };
 }
