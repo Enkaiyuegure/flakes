@@ -18,7 +18,7 @@
               };
             };
             swap = {
-              size = "24G";
+              size = "8G";
               content = {
                 type = "swap";
                 resumeDevice = true;
@@ -27,39 +27,31 @@
             nix = {
               size = "100%";
               content = {
-                type = "gpt";
-                partitions = {
-                  primary = {
-                    size = "100%";
-                    content = {
-                      type = "btrfs";
-                      extraArgs = [ "-f" ];
-                      subvolumes = {
-                        "/home" = {
-                          mountpoint = "/home";
-                        };
-                        "/boot" = {
-                          mountOptions = [ "compress=zstd" "noatime" ];
-                          mountpoint = "/boot";
-                        };
-                        "/nix" = {
-                          mountOptions = [ "compress=zstd" "noatime" ];
-                          mountpoint = "/nix";
-                        };
-                        "/persist" = {
-                          mountOptions = [ "compress=zstd" ];
-                          mountpoint = "/persist";
-                        };
-                        "/trash" = {
-                          mountOptions = [ "compress=zstd" ];
-                          mountpoint = "/.trash";
-                        };
-                        "/secret" = {
-                          mountOptions = [ "compress=zstd" ];
-                          mountpoint = "/.secret";
-                        };
-                      };
-                    };
+                type = "btrfs";
+                extraArgs = [ "-f" ];
+                subvolumes = {
+                  "/home" = {
+                    mountpoint = "/home";
+                  };
+                  "/boot" = {
+                    mountOptions = [ "compress=zstd" "noatime" ];
+                    mountpoint = "/boot";
+                  };
+                  "/nix" = {
+                    mountOptions = [ "compress=zstd" "noatime" ];
+                    mountpoint = "/nix";
+                  };
+                  "/persist" = {
+                    mountOptions = [ "compress=zstd" ];
+                    mountpoint = "/persist";
+                  };
+                  "/trash" = {
+                    mountOptions = [ "compress=zstd" ];
+                    mountpoint = "/.trash";
+                  };
+                  "/secret" = {
+                    mountOptions = [ "compress=zstd" ];
+                    mountpoint = "/.secret";
                   };
                 };
               };
