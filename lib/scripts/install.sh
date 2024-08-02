@@ -42,7 +42,9 @@ while true; do
 	if [ "$root_passwd_choice" = "y" ]; then
 		set_root_passwd
 		for hosts_profiles_dir in ./hosts/profiles/*; do
-			sed -i "/initialHashedPassword/c\ \ \ \ initialHashedPassword\ =\ \"$root_passwd_hash\";" ./hosts/profiles/"$hosts_profiles_dir"/password/host.nix
+			if [ -d "$hosts_profiles_dir" ]; then
+				sed -i "/initialHashedPassword/c\ \ \ \ initialHashedPassword\ =\ \"$root_passwd_hash\";" ./hosts/profiles/"$hosts_profiles_dir"/password/host.nix
+			fi
 		done
 	elif [ "$root_passwd_choice" = "n" ]; then
 		break
@@ -56,6 +58,7 @@ while true; do
 	echo "0. none"
 	echo "1. ltp-zbook-nix"
 	echo "2. tower-qtj1-nix"
+	echo "3. router-n100-nix"
 	read -p $'\e[1;32mEnter your choice(number): \e[0m' -r user_passwd_choice
 
 	case $user_passwd_choice in
@@ -72,6 +75,11 @@ while true; do
 		sed -i "/initialHashedPassword/c\ \ \ \ initialHashedPassword\ =\ \"$user_passwd_hash\";" ./hosts/profiles/tower-qtj1-nix/password/home.nix
 		break
 		;;
+	3)
+		set_user_passwd
+		sed -i "/initialHashedPassword/c\ \ \ \ initialHashedPassword\ =\ \"$user_passwd_hash\";" ./hosts/profiles/router-n100-nix/password/home.nix
+		break
+		;;
 	*)
 		echo "Invalid choice, please try again."
 		;;
@@ -82,6 +90,7 @@ while true; do
 	echo "Please select the device you wish to install:"
 	echo "1. ltp-zbook-nix"
 	echo "2. tower-qtj1-nix"
+	echo "3. router-n100-nix"
 	read -p $'\e[1;32mEnter your choice(number): \e[0m' -r device
 
 	case $device in
@@ -91,6 +100,10 @@ while true; do
 		;;
 	2)
 		nixos-install --no-root-passwd --flake .#tower-qtj1-nix
+		break
+		;;
+	3)
+		nixos-install --no-root-passwd --flake .#router-n100-nix
 		break
 		;;
 	*)
