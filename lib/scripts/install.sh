@@ -52,6 +52,29 @@ while true; do
 done
 
 while true; do
+	echo "Need tp set password for user? which host?"
+	echo "1. ltp-zbook-nix"
+	echo "2. tower-qtj1-nix"
+	read -p $'\e[1;32mEnter your choice(number): \e[0m' -r user_passwd_choice
+
+	case $user_passwd_choice in
+	1)
+		set_user_passwd
+		sed -i "/initialHashedPassword/c\ \ \ \ initialHashedPassword\ =\ \"$user_passwd_hash\";" ./hosts/profiles/ltp-zbook-nix/password/home.nix
+		break
+		;;
+	2)
+		set_user_passwd
+		sed -i "/initialHashedPassword/c\ \ \ \ initialHashedPassword\ =\ \"$user_passwd_hash\";" ./hosts/profiles/tower-qtj1-nix/password/home.nix
+		break
+		;;
+	*)
+		echo "Invalid choice, please try again."
+		;;
+	esac
+done
+
+while true; do
 	echo "please select the device you wish to install:"
 	echo "1. ltp-zbook-nix"
 	echo "2. tower-qtj1-nix"
@@ -59,14 +82,10 @@ while true; do
 
 	case $device in
 	1)
-		set_user_passwd
-		sed -i "/initialHashedPassword/c\ \ \ \ initialHashedPassword\ =\ \"$user_passwd_hash\";" ./hosts/profiles/ltp-zbook-nix/password/home.nix
 		nixos-install --no-root-passwd --flake .#ltp-zbook-nix
 		break
 		;;
 	2)
-		set_user_passwd
-		sed -i "/initialHashedPassword/c\ \ \ \ initialHashedPassword\ =\ \"$user_passwd_hash\";" ./hosts/profiles/tower-qtj1-nix/password/home.nix
 		nixos-install --no-root-passwd --flake .#tower-qtj1-nix
 		break
 		;;
