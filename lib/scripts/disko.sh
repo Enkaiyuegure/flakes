@@ -42,6 +42,7 @@ while true; do
 	echo "Please select a disk partition layout:"
 	echo "1. ltp-zbook-nix"
 	echo "2. tower-qtj1-nix"
+	echo "3. router-n100-nix"
 	read -p $'\e[1;32mEnter your choice(number): \e[0m' choice
 
 	case $choice in
@@ -55,6 +56,13 @@ while true; do
 	2)
 		partition_layout="$common_dir/tower-qtj1-nix.nix"
 		hostName="tower-qtj1-nix"
+		ask_edit
+		review_and_edit
+		break
+		;;
+	3)
+		partition_layout="$common_dir/router-n100-nix.nix"
+		hostName="router-n100-nix"
 		ask_edit
 		review_and_edit
 		break
