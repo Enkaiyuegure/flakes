@@ -28,14 +28,14 @@
     hugo
 
     # Jetbrains
-    jetbrains.clion
-    jetbrains.goland
-    jetbrains.idea-ultimate
-    jetbrains.pycharm-professional
-    jetbrains.webstorm
+    #jetbrains.clion
+    #jetbrains.goland
+    #jetbrains.idea-ultimate
+    #jetbrains.pycharm-professional
+    #jetbrains.webstorm
 
     #ee
-    kicad
+    #kicad
     ngspice
     freecad
     librecad
