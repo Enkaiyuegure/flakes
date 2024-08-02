@@ -29,5 +29,18 @@
           }
         ] ++ hostModules;
       };
+      "router-n100-nix" = nixosSystem {
+        specialArgs = { inherit userName; };
+        modules = [
+          ./router-n100-nix
+          {
+            home-manager = {
+              extraSpecialArgs = inputs;
+              users.${userName}.imports = homeImports."${userName}@router-n100-nix";
+            };
+          }
+        ] ++ hostModules;
+      };
+
     };
 }

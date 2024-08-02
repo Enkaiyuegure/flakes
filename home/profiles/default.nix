@@ -3,6 +3,7 @@ let
   homeImports = {
     "${userName}@ltp-zbook-nix" = [ ./ltp-zbook-nix ] ++ homeModules;
     "${userName}@tower-qtj1-nix" = [ ./tower-qtj1-nix ] ++ homeModules;
+    "${userName}@router-n100-nix" = [ ./router-n100-nix ] ++ homeModules;
   };
 
   inherit (inputs.home-manager.lib) homeManagerConfiguration;
@@ -20,6 +21,10 @@ in
       };
       "${userName}@tower-qtj1-nix" = homeManagerConfiguration {
         modules = homeImports."${userName}@tower-qtj1-nix";
+        inherit pkgs;
+      };
+      "${userName}@router-n100-nix" = homeManagerConfiguration {
+        modules = homeImports."${userName}@router-n100-nix";
         inherit pkgs;
       };
     });
