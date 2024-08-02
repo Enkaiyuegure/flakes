@@ -8,6 +8,8 @@
       ./hosts/profiles
       ./home/profiles
       ./modules
+    ] ++ [
+      inputs.flake-root.flakeModule
     ];
     systems = [
       "x86_64-linux"
