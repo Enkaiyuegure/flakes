@@ -12,7 +12,16 @@
     systems = [
       "x86_64-linux"
     ];
-    perSystem = { config, ... }: { };
+    perSystem = { config, pkgs, ... }: {
+      devShells = {
+        default = pkgs.mkShell {
+          nativeBuildInputs = with pkgs; [ git neovim sbctl just ];
+          inputsFrom = [
+            config.flake-root.devShell
+          ];
+        };
+      };
+    };
   };
 
   inputs = {
