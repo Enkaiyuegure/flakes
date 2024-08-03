@@ -9,6 +9,10 @@
     go-musicfox
     prismlauncher
 
+    #AI
+    ollama
+    koboldcpp
+
     # communication
     qq
     thunderbird
