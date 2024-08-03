@@ -4,6 +4,6 @@
     ./neovim
     #./doomemacs
     ./emacs
-    ./typora
+    #@./typora
   ];
 }
