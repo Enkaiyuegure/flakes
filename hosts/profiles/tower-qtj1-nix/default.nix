@@ -3,7 +3,15 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 { config, lib, pkgs, ... }:
-
+let
+  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
+    export __NV_PRIME_RENDER_OFFLOAD=1
+    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    export __VK_LAYER_NV_optimus=NVIDIA_only
+    exec "$@"
+  '';
+in
 {
   imports =
     [
@@ -93,6 +101,31 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware = {
+    opengl.enable = true;
+
+    nvidia = {
+      open = false;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
+      modesetting.enable = true;
+      powerManagement = {
+        enable = false;
+        finegrained = false;
+      };
+      nvidiaSettings = true;
+    };
+    pulseaudio.support32Bit = true;
+  };
+
+  environment.variables = {
+    # WLR_RENDERER = "vulkan";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    GBM_BACKEND = "nvidia-drm";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    WLR_RENDERER_ALLOW_SOFTWARE = "1";
+  };
   # Enable sound.
   # hardware.pulseaudio.enable = true;
   # OR
@@ -107,10 +140,15 @@
   environment = {
     binsh = "${pkgs.dash}/bin/dash";
     shells = with pkgs; [ fish ];
-    systemPackages = with pkgs; [
+    systemPackages = (with pkgs; [
       cargo
       glow
       nix-output-monitor
+      libva
+      libva-utils
+      glxinfo
+    ]) ++ [
+      nvidia-offload
     ];
   };
 
