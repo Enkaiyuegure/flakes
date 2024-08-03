@@ -141,10 +141,10 @@
       #--------------------------------------#
       # Move focus with mainMod + arrow keys #
       #--------------------------------------#
-      bind = Super, left, movefocus, l
-      bind = Super, right, movefocus, r
-      bind = Super, up, movefocus, u
-      bind = Super, down, movefocus, d
+      bind = Alt, left, movefocus, l
+      bind = Alt, right, movefocus, r
+      bind = Alt, up, movefocus, u
+      bind = Alt, down, movefocus, d
 
       #----------------------------------------#
       # Switch workspaces with mainMod + [0-9] #
@@ -161,8 +161,8 @@
       bind = Super, 0, workspace, 10
       bind = Super, L, workspace, +1
       bind = Super, H, workspace, -1
-      bind = Alt, right, workspace, e+1
-      bind = Alt, left, workspace,e-1
+      bind = Super, right, workspace, e+1
+      bind = Super, left, workspace,e-1
       bind = Super, T, workspace,TG
       bind = Super, M, workspace,Music
 
