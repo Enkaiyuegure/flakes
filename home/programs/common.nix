@@ -8,6 +8,7 @@
     # fun
     go-musicfox
     prismlauncher
+    discord
 
     #AI
     ollama
