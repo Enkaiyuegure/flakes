@@ -10,11 +10,23 @@
       ./modules
     ] ++ [
       inputs.flake-root.flakeModule
+      inputs.treefmt-nix.flakeModule
     ];
     systems = [
       "x86_64-linux"
     ];
     perSystem = { config, pkgs, ... }: {
+      treefmt.config = {
+        inherit (config.flake-root) projectRootFile;
+        package = pkgs.treefmt;
+        programs = {
+          nixpkgs-fmt.enable = true;
+          prettier.enable = true;
+          taplo.enable = true;
+          shfmt.enable = true;
+        };
+      };
+
       devShells = {
         default = pkgs.mkShell {
           nativeBuildInputs = with pkgs; [ git neovim sbctl just ];
@@ -23,6 +35,9 @@
           ];
         };
       };
+
+      formatter = config.treefmt.build.wrapper;
+
     };
   };
 
@@ -68,6 +83,7 @@
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     nvim-flake.url = "github:Ruixi-rebirth/nvim-flake";
     nixd.url = "github:nix-community/nixd";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
   nixConfig = {
