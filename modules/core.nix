@@ -2,7 +2,7 @@
 {
   networking = {
     networkmanager.enable = true;
-    firewall.allowedTCPPorts = [ 5173 1420 ];
+    firewall.allowedTCPPorts = [ 5173 1420 3128 1080 ];
     hosts = {
       "185.199.109.133" = [ "raw.githubusercontent.com" ];
       "185.199.111.133" = [ "raw.githubusercontent.com" ];
