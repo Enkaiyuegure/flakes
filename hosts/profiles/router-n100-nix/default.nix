@@ -143,6 +143,19 @@
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
+  services.xserver.videoDrivers = [ "intel" ];
+
+  hardware = {
+    opengl = {
+      enable = true;
+      extraPackages = with pkgs; [
+        intel-media-driver
+        intel-ocl
+        intel-vaapi-driver
+        vpl-gpu-rt
+      ];
+    };
+  };
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
