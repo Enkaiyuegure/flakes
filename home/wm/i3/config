@@ -19,7 +19,7 @@ font pango: Noto Sans Regular 10
 exec --no-startup-id autotiling
 
 # set the mod key to the winkey:
-set $mod Mod4
+set Mod4 Mod4
 
 # control focused window when follows the mouse movements
 focus_follows_mouse yes
@@ -63,96 +63,96 @@ gaps outer 3
 # window title alignment
 #title_align center
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# Use Mouse+Mod4 to drag floating windows to their wanted position
+floating_modifier Mod4
 
 # switch/iterate between workspaces
-bindsym Mod1+Right workspace next
-bindsym Mod1+Left workspace prev
+bindsym Mod4+Right workspace next
+bindsym Mod4+Left workspace prev
 
 #######################
 # switch to workspace #
 #######################
-bindsym $mod+1    workspace  $ws1
-bindsym $mod+2    workspace  $ws2
-bindsym $mod+3    workspace  $ws3
-bindsym $mod+4    workspace  $ws4
-bindsym $mod+5    workspace  $ws5
-bindsym $mod+6    workspace  $ws6
-bindsym $mod+7    workspace  $ws7
-bindsym $mod+8    workspace  $ws8
-bindsym $mod+9    workspace  $ws9
-bindsym $mod+0    workspace  $ws10
+bindsym Mod4+1    workspace  $ws1
+bindsym Mod4+2    workspace  $ws2
+bindsym Mod4+3    workspace  $ws3
+bindsym Mod4+4    workspace  $ws4
+bindsym Mod4+5    workspace  $ws5
+bindsym Mod4+6    workspace  $ws6
+bindsym Mod4+7    workspace  $ws7
+bindsym Mod4+8    workspace  $ws8
+bindsym Mod4+9    workspace  $ws9
+bindsym Mod4+0    workspace  $ws10
 
 ########################################
 # switch to workspace with numpad keys #
 ########################################
-bindcode $mod+87 workspace 1
-bindcode $mod+88 workspace 2
-bindcode $mod+89 workspace 3
-bindcode $mod+83 workspace 4
-bindcode $mod+84 workspace 5
-bindcode $mod+85 workspace 6
-bindcode $mod+79 workspace 7
-bindcode $mod+80 workspace 8
-bindcode $mod+81 workspace 9
-bindcode $mod+90 workspace 10
+bindcode Mod4+87 workspace 1
+bindcode Mod4+88 workspace 2
+bindcode Mod4+89 workspace 3
+bindcode Mod4+83 workspace 4
+bindcode Mod4+84 workspace 5
+bindcode Mod4+85 workspace 6
+bindcode Mod4+79 workspace 7
+bindcode Mod4+80 workspace 8
+bindcode Mod4+81 workspace 9
+bindcode Mod4+90 workspace 10
 
 ################################################
 # switch to workspace with numlock numpad keys #
 ################################################
-bindcode $mod+Mod2+87 workspace $ws1
-bindcode $mod+Mod2+88 workspace $ws2
-bindcode $mod+Mod2+89 workspace $ws3
-bindcode $mod+Mod2+83 workspace $ws4
-bindcode $mod+Mod2+84 workspace $ws5
-bindcode $mod+Mod2+85 workspace $ws6
-bindcode $mod+Mod2+79 workspace $ws7
-bindcode $mod+Mod2+80 workspace $ws8
-bindcode $mod+Mod2+81 workspace $ws9
-bindcode $mod+Mod2+90 workspace $ws10
+bindcode Mod4+Mod2+87 workspace $ws1
+bindcode Mod4+Mod2+88 workspace $ws2
+bindcode Mod4+Mod2+89 workspace $ws3
+bindcode Mod4+Mod2+83 workspace $ws4
+bindcode Mod4+Mod2+84 workspace $ws5
+bindcode Mod4+Mod2+85 workspace $ws6
+bindcode Mod4+Mod2+79 workspace $ws7
+bindcode Mod4+Mod2+80 workspace $ws8
+bindcode Mod4+Mod2+81 workspace $ws9
+bindcode Mod4+Mod2+90 workspace $ws10
 
 #######################################
 # move focused container to workspace #
 #######################################
-bindsym $mod+Shift+1    move container to workspace  $ws1
-bindsym $mod+Shift+2    move container to workspace  $ws2
-bindsym $mod+Shift+3    move container to workspace  $ws3
-bindsym $mod+Shift+4    move container to workspace  $ws4
-bindsym $mod+Shift+5    move container to workspace  $ws5
-bindsym $mod+Shift+6    move container to workspace  $ws6
-bindsym $mod+Shift+7    move container to workspace  $ws7
-bindsym $mod+Shift+8    move container to workspace  $ws8
-bindsym $mod+Shift+9    move container to workspace  $ws9
-bindsym $mod+Shift+0    move container to workspace  $ws10
+bindsym Mod4+Shift+1    move container to workspace  $ws1
+bindsym Mod4+Shift+2    move container to workspace  $ws2
+bindsym Mod4+Shift+3    move container to workspace  $ws3
+bindsym Mod4+Shift+4    move container to workspace  $ws4
+bindsym Mod4+Shift+5    move container to workspace  $ws5
+bindsym Mod4+Shift+6    move container to workspace  $ws6
+bindsym Mod4+Shift+7    move container to workspace  $ws7
+bindsym Mod4+Shift+8    move container to workspace  $ws8
+bindsym Mod4+Shift+9    move container to workspace  $ws9
+bindsym Mod4+Shift+0    move container to workspace  $ws10
 
 ########################################################
 # move focused container to workspace with numpad keys #
 ########################################################
-bindcode $mod+Shift+Mod2+87 	move container to workspace  $ws1
-bindcode $mod+Shift+Mod2+88 	move container to workspace  $ws2
-bindcode $mod+Shift+Mod2+89 	move container to workspace  $ws3
-bindcode $mod+Shift+Mod2+83 	move container to workspace  $ws4
-bindcode $mod+Shift+Mod2+84 	move container to workspace  $ws5
-bindcode $mod+Shift+Mod2+85 	move container to workspace  $ws6
-bindcode $mod+Shift+Mod2+79 	move container to workspace  $ws7
-bindcode $mod+Shift+Mod2+80 	move container to workspace  $ws8
-bindcode $mod+Shift+Mod2+81 	move container to workspace  $ws9
-bindcode $mod+Shift+Mod2+90 	move container to workspace  $ws10
+bindcode Mod4+Shift+Mod2+87 	move container to workspace  $ws1
+bindcode Mod4+Shift+Mod2+88 	move container to workspace  $ws2
+bindcode Mod4+Shift+Mod2+89 	move container to workspace  $ws3
+bindcode Mod4+Shift+Mod2+83 	move container to workspace  $ws4
+bindcode Mod4+Shift+Mod2+84 	move container to workspace  $ws5
+bindcode Mod4+Shift+Mod2+85 	move container to workspace  $ws6
+bindcode Mod4+Shift+Mod2+79 	move container to workspace  $ws7
+bindcode Mod4+Shift+Mod2+80 	move container to workspace  $ws8
+bindcode Mod4+Shift+Mod2+81 	move container to workspace  $ws9
+bindcode Mod4+Shift+Mod2+90 	move container to workspace  $ws10
 
 ########################################################
 # move focused container to workspace with numpad keys #
 ########################################################
-bindcode $mod+Shift+87 	 move container to workspace  $ws1
-bindcode $mod+Shift+88 	 move container to workspace  $ws2
-bindcode $mod+Shift+89 	 move container to workspace  $ws3
-bindcode $mod+Shift+83 	 move container to workspace  $ws4
-bindcode $mod+Shift+84 	 move container to workspace  $ws5
-bindcode $mod+Shift+85 	 move container to workspace  $ws6
-bindcode $mod+Shift+79 	 move container to workspace  $ws7
-bindcode $mod+Shift+80 	 move container to workspace  $ws8
-bindcode $mod+Shift+81 	 move container to workspace  $ws9
-bindcode $mod+Shift+90 	 move container to workspace  $ws10
+bindcode Mod4+Shift+87 	 move container to workspace  $ws1
+bindcode Mod4+Shift+88 	 move container to workspace  $ws2
+bindcode Mod4+Shift+89 	 move container to workspace  $ws3
+bindcode Mod4+Shift+83 	 move container to workspace  $ws4
+bindcode Mod4+Shift+84 	 move container to workspace  $ws5
+bindcode Mod4+Shift+85 	 move container to workspace  $ws6
+bindcode Mod4+Shift+79 	 move container to workspace  $ws7
+bindcode Mod4+Shift+80 	 move container to workspace  $ws8
+bindcode Mod4+Shift+81 	 move container to workspace  $ws9
+bindcode Mod4+Shift+90 	 move container to workspace  $ws10
 
 # resize window (you can also use the mouse for that):
 #mode "resize" {
@@ -177,109 +177,109 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 #        bindsym Escape mode "default"
 #}
 
-bindsym $mod+r mode "resize"
+bindsym Mod4+r mode "resize"
 
 ######################################
 # keybindings for different actions: #
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym Mod4+Return exec kitty
 
 # kill focused window
 bindsym Mod1+q kill
 
 # exit-menu
-bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
+bindsym Mod4+Shift+e exec ~/.config/i3/scripts/powermenu
 
 # Lock the system
 # lock with a picture:
-#bindsym $mod+l exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
+#bindsym Mod4+l exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
-bindsym $mod+l exec ~/.config/i3/scripts/blur-lock
+bindsym Mod4+l exec ~/.config/i3/scripts/blur-lock
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym Mod4+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to update i3)
-bindsym $mod+Shift+r restart
+bindsym Mod4+Shift+r restart
 
 # keybinding in fancy rofi (automated):
 bindsym F1 exec ~/.config/i3/scripts/keyhint-2
 # alternative
 # keybinding list in editor:
-# bindsym $mod+F1 exec xed ~/.config/i3/keybindings
+# bindsym Mod4+F1 exec xed ~/.config/i3/keybindings
 
 # Backlight control
 bindsym XF86MonBrightnessUp exec xbacklight +10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
 bindsym XF86MonBrightnessDown exec xbacklight -10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+b focus up
-bindsym $mod+o focus right
+bindsym Mod1+j focus left
+bindsym Mod1+k focus down
+bindsym Mod1+b focus up
+bindsym Mod1+o focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym Mod1+Left focus left
+bindsym Mod1+Down focus down
+bindsym Mod1+Up focus up
+bindsym Mod1+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+b move up
-bindsym $mod+Shift+o move right
+bindsym Mod1+Shift+j move left
+bindsym Mod1+Shift+k move down
+bindsym Mod1+Shift+b move up
+bindsym Mod1+Shift+o move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym Mod1+Shift+Left move left
+bindsym Mod1+Shift+Down move down
+bindsym Mod1+Shift+Up move up
+bindsym Mod1+Shift+Right move right
 
 ####################
 # split the window #
 ####################
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym Mod4+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym Mod4+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym Mod1+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+g layout tabbed
-bindsym $mod+e layout toggle split
+bindsym Mod4+s layout stacking
+bindsym Mod4+g layout tabbed
+bindsym Mod4+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym Mod4+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym Mod4+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym Mod4+a focus parent
 
 # focus the child container
-bindsym $mod+Shift+a focus child
+bindsym Mod4+Shift+a focus child
 
 #####################
 # scratchpad window #
 #####################
 
 # move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym Mod4+Shift+minus move scratchpad
 
 # show the next scratchpad window or hide the focused scratchpad window
-bindsym $mod+minus scratchpad show
+bindsym Mod4+minus scratchpad show
 
 # open new empty workspace
-bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace
+bindsym Mod4+Shift+n exec ~/.config/i3/scripts/empty_workspace
 
 # Multimedia Keys
 
@@ -288,8 +288,8 @@ bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && pkill -RTMI
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
 
 # gradular volume control
-bindsym $mod+XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ && pkill -RTMIN+1 i3blocks
-bindsym $mod+XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- && pkill -RTMIN+1 i3blocks
+bindsym Mod4+XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ && pkill -RTMIN+1 i3blocks
+bindsym Mod4+XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- && pkill -RTMIN+1 i3blocks
 
 # mute
 bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
@@ -301,15 +301,15 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Redirect sound to headphones
-bindsym $mod+p exec /usr/local/bin/switch-audio-port
+bindsym Mod4+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+w exec /usr/bin/firefox
-bindsym $mod+n exec /usr/bin/thunar
+bindsym Mod4+w exec /usr/bin/firefox
+bindsym Mod4+n exec /usr/bin/thunar
 bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
 # Power Profiles menu switcher (rofi)
-bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
+bindsym Mod4+Shift+p exec ~/.config/i3/scripts/power-profiles
 
 ##########################################
 # configuration for workspace behaviour: #
@@ -532,17 +532,17 @@ exec --no-startup-id bash ~/.config/polybar/launch.sh
 # Application menu handled by rofi: #
 #####################################
 
-## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
+## rofi bindings fancy application menu (Mod4+d /F9 optional disabled)
 
-bindsym $mod+d exec rofi -modi drun -show drun \
+bindsym Mod4+d exec rofi -modi drun -show drun \
 		-config ~/.config/rofi/rofidmenu.rasi
 
 #bindsym F9 exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
-## rofi bindings for window menu ($mod+t /F10 optional disabled)
+## rofi bindings for window menu (Mod4+t /F10 optional disabled)
 
-bindsym $mod+t exec rofi -show window \
+bindsym Mod4+t exec rofi -show window \
 		-config ~/.config/rofi/rofidmenu.rasi
 
 #bindsym F10 exec rofi -show window \
@@ -551,5 +551,5 @@ bindsym $mod+t exec rofi -show window \
 ## rofi bindings to manage clipboard (install rofi-greenclip from the AUR)
 
 #exec --no-startup-id greenclip daemon>/dev/null
-#bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard \
+#bindsym Mod4+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard \
 #		-config ~/.config/rofi/rofidmenu.rasi
