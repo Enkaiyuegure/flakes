@@ -18,9 +18,6 @@ font pango: Noto Sans Regular 10
 
 exec --no-startup-id autotiling
 
-# set the mod key to the winkey:
-set Mod4 Mod4
-
 # control focused window when follows the mouse movements
 focus_follows_mouse yes
 
