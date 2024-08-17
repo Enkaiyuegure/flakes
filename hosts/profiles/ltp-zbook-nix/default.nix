@@ -89,6 +89,14 @@
     ];
   };
 
+  services.zerotierone = {
+    enable = true;
+    joinNetworks = [
+      "e82704d85ddb31a2"
+      "9e1948db63e1d5b6"
+    ];
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
