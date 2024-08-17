@@ -1,6 +1,6 @@
 {
   imports = [
     ./polybar.nix
-    ./waybar.nix
+    #./waybar.nix
   ];
 }

@@ -79,6 +79,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+
+    matugen.url = "github:InioX/matugen?ref=v2.2.0";
+    ags.url = "github:Aylur/ags";
+    astal.url = "github:Aylur/astal";
+
     # Add git hooks to format nix code before commit
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     nvim-flake.url = "github:Ruixi-rebirth/nvim-flake";

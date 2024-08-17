@@ -239,9 +239,10 @@
        bind=,XF86AudioNext,exec, mpc -q next 
        bind=,XF86AudioPrev,exec, mpc -q prev
 
-       #---------------#
-       # waybar toggle #
-       #---------------#
+       #-----#
+       # ags #
+       #-----#
+       exec-once = ags -b hypr
 
        #---------------#
        # resize window #

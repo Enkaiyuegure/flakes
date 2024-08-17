@@ -1,6 +1,7 @@
 {
   imports = [
     ./polybar
-    ./waybar
+    #./waybar
+    ./ags
   ];
 }

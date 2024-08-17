@@ -2,11 +2,15 @@
 {
   flake.nixosConfigurations =
     let
+      packages.x86_64-linux.default = inputs.nixpkgs.legacyPackages.x86_64-linux.callPackage ../../pkgs/ags { inherit inputs; };
       inherit (inputs.nixpkgs.lib) nixosSystem;
     in
     {
       "ltp-zbook-nix" = nixosSystem {
-        specialArgs = { inherit userName; };
+        specialArgs = {
+          inherit userName;
+          asztal = packages.x86_64-linux.default;
+        };
         modules = [
           ./ltp-zbook-nix
           {

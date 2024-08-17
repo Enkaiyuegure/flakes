@@ -1,4 +1,4 @@
-{ pkgs, inputs, lib, ... }:
+{ pkgs, inputs, lib, self, ... }:
 {
   nix = {
     channel.enable = false;
