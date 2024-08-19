@@ -86,6 +86,9 @@
       cargo
       glow
       nix-output-monitor
+      libreoffice-qt
+      hunspell
+      hunspellDicts.en_US
     ];
   };
 
