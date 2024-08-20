@@ -7,6 +7,7 @@
 
     # fun
     go-musicfox
+    yesplaymusic
     prismlauncher
     discord
 
