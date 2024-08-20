@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ inputs, config, lib, pkgs, ... }:
 
 {
   imports =
@@ -38,10 +38,37 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
+  systemd.network.networks."10-lan" = {
+    matchConfig.Name = [ "ens18" ];
+    networkConfig = {
+      Bridge = "vmbr0";
+    };
+  };
+
+  systemd.network.netdevs."vmbr0" = {
+    netdevConfig = {
+      Name = "vmbr0";
+      Kind = "bridge";
+    };
+  };
+
+  systemd.network.networks."10-lan-bridge" = {
+    matchConfig.Name = "vmbr0";
+    networkConfig = {
+      IPv6AcceptRA = true;
+      DHCP = "ipv4";
+    };
+    linkConfig.RequiredForOnline = "routable";
+  };
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  services.proxmox-ve.enable = true;
 
+  nixpkgs.overlays = [
+    inputs.proxmox-nixos.overlays."x86_64-linux"
+  ];
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {

@@ -25,6 +25,8 @@ in
           }
           inputs.disko.nixosModules.disko
           inputs.impermanence.nixosModules.impermanence
+          inputs.proxmox-nixos.nixosModules.proxmox-ve
+
           module_args
           ./system.nix
           ./hosts

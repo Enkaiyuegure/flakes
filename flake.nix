@@ -84,6 +84,8 @@
     ags.url = "github:Aylur/ags";
     astal.url = "github:Aylur/astal";
 
+    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
+
     # Add git hooks to format nix code before commit
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     nvim-flake.url = "github:Ruixi-rebirth/nvim-flake";
@@ -94,9 +96,11 @@
   nixConfig = {
     extra-substituters = [
       "https://nix-community.cachix.org"
+      "https://cache.saumon.network/proxmox-nixos"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "proxmox-nixos:nveXDuVVhFDRFx8Dn19f1WDEaNRJjPrF2CPD2D+m1ys="
     ];
     trusted-users = [ "root" "@wheel" ];
   };

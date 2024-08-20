@@ -6,7 +6,7 @@
       inherit (inputs.nixpkgs.lib) nixosSystem;
     in
     {
-      "ltp-zbook-nix" = nixosSystem {
+      "ltp-zbook-nix" = nixosSystem rec{
         specialArgs = {
           inherit userName;
           asztal = packages.x86_64-linux.default;
