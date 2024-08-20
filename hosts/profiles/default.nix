@@ -15,6 +15,7 @@
           ./ltp-zbook-nix
           {
             home-manager = {
+              backupFileExtension = "backup";
               extraSpecialArgs = inputs;
               users.${userName}.imports = homeImports."${userName}@ltp-zbook-nix";
             };
@@ -27,6 +28,7 @@
           ./tower-qtj1-nix
           {
             home-manager = {
+              backupFileExtension = "backup";
               extraSpecialArgs = inputs;
               users.${userName}.imports = homeImports."${userName}@tower-qtj1-nix";
             };
@@ -39,6 +41,7 @@
           ./router-n100-nix
           {
             home-manager = {
+              backupFileExtension = "backup";
               extraSpecialArgs = inputs;
               users.${userName}.imports = homeImports."${userName}@router-n100-nix";
             };
