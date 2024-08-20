@@ -17,6 +17,8 @@
     # communication
     qq
     thunderbird
+    telegram-desktop
+    tg
 
     #dev
     #cs
