@@ -38,6 +38,13 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
+  boot.kernelParams = [
+    "quiet"
+    "amd_iommu=on"
+    "iommu=pt"
+    "pcie_acs_override=downstream"
+  ];
+
   systemd.network.networks."10-lan" = {
     matchConfig.Name = [ "ens18" ];
     networkConfig = {
