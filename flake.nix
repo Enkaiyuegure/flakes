@@ -86,6 +86,8 @@
 
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
 
+    nix-gaming.url = "github:fufexan/nix-gaming";
+
     # Add git hooks to format nix code before commit
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     nvim-flake.url = "github:Ruixi-rebirth/nvim-flake";
@@ -97,10 +99,12 @@
     extra-substituters = [
       "https://nix-community.cachix.org"
       "https://cache.saumon.network/proxmox-nixos"
+      "https://nix-gaming.cachix.org"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "proxmox-nixos:nveXDuVVhFDRFx8Dn19f1WDEaNRJjPrF2CPD2D+m1ys="
+      "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
     ];
     trusted-users = [ "root" "@wheel" ];
   };
