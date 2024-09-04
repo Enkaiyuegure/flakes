@@ -5,14 +5,16 @@ let
     inherit inputs self;
   };
 
-  userName = "enkai";
+  myLib = import ../lib;
+  myVars = import ../vars;
 in
 {
   imports = [
     {
       _module.args = {
         inherit module_args;
-        inherit userName;
+        inherit myVars;
+        inherit myLib;
 
         #NixOS modules
         hostModules = [
@@ -36,7 +38,7 @@ in
 
         #HomeManager modules
         homeModules = [
-          (import ./home { inherit userName; })
+          (import ./home { inherit myVars myLib; })
           module_args
           inputs.anyrun.homeManagerModules.anyrun
           inputs.ags.homeManagerModules.default

@@ -1,8 +1,8 @@
-{ userName, ... }:
+{ myVars, ... }:
 {
   home = {
-    username = "${userName}";
-    homeDirectory = "/home/${userName}";
+    username = "${myVars.userName}";
+    homeDirectory = "/home/${myVars.userName}";
     language.base = "en_US.UTF-8";
 
     stateVersion = "24.11";

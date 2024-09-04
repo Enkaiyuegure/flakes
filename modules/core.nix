@@ -1,4 +1,4 @@
-{ pkgs, userName, ... }:
+{ pkgs, myVars, ... }:
 {
   networking = {
     networkmanager.enable = true;
@@ -69,7 +69,7 @@
 
   users.mutableUsers = false;
   programs.fish.enable = true;
-  users.users.${userName} = {
+  users.users.${myVars.userName} = {
     shell = pkgs.fish;
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" ];
@@ -83,7 +83,7 @@
   security.sudo = {
     enable = true;
     extraConfig = ''
-      ${userName} ALL=(ALL) NOPASSWD:ALL
+      ${myVars.userName} ALL=(ALL) NOPASSWD:ALL
     '';
   };
   security.doas = {

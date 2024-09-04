@@ -10,6 +10,7 @@
     yesplaymusic
     prismlauncher
     discord
+    moonlight-qt
 
     #AI
     ollama

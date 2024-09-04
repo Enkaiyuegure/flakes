@@ -1,7 +1,7 @@
-{ userName, ... }:
+{ myVars, ... }:
 {
   virtualisation.lxd.enable = true;
-  users.users.${userName} = {
+  users.users.${myVars.userName} = {
     extraGroups = [ "lxd" ];
   };
 }
