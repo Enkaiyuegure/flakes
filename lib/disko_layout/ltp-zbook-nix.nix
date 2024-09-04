@@ -31,7 +31,7 @@
                 name = "nix";
               };
             };
-          }; 
+          };
         };
       };
       vdc = {
@@ -40,12 +40,11 @@
         content = {
           type = "gpt";
           partitions = {
-            secret = {
+            livecd = {
               size = "512M";
               content = {
                 type = "filesystem";
-                format = "xfs";
-                mountpoint = "/.secret";
+                format = "ext4";
               };
             };
             swap = {
@@ -62,7 +61,7 @@
                 name = "nix";
               };
             };
-          }; 
+          };
         };
       };
     };
@@ -98,13 +97,9 @@
                     mountOptions = [ "compress=zstd" "noatime" ];
                     mountpoint = "/nix";
                   };
-                  "/persist" = {
+                  "/@persist" = {
                     mountOptions = [ "compress=zstd" ];
                     mountpoint = "/persist";
-                  };
-                  "/trash" = {
-                    mountOptions = [ "compress=zstd" ];
-                    mountpoint = "/.trash";
                   };
                 };
               };
