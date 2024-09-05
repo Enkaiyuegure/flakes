@@ -1,9 +1,15 @@
 {
   description = "Nix Flakes Configuration of Enkaiyuegure";
 
-  outputs = inputs @ { self, ... }: inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+  outputs = inputs @ { self, ... }: 
+  let
+    selfPkgs = import ./pkgs;
+  in
+  inputs.flake-parts.lib.mkFlake { inherit inputs; } {
     debug = true;
-    flake = { };
+    flake = { 
+      overlays.default = selfPkgs.overlay;
+    };
     imports = [
       ./hosts/profiles
       ./home/profiles
@@ -91,7 +97,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     #==============================The Proxmox Hypervisor, on NixOS#==============================#
-    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
+    #proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
     #######################################othersNixProject########################################
     #=========================================Gaming on Nix=======================================#
     nix-gaming.url = "github:fufexan/nix-gaming";
