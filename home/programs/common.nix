@@ -11,6 +11,8 @@
     prismlauncher
     discord
     moonlight-qt
+    logiops
+    piper
 
     #AI
     ollama
@@ -28,13 +30,7 @@
     k9s
     kubectl
 
-    mitscheme
-
     zulu
-
-    nodejs_22
-    nodePackages_latest.gatsby-cli
-    hugo
 
     # Jetbrains
     #jetbrains.clion
