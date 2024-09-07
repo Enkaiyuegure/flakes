@@ -71,11 +71,11 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  services.proxmox-ve.enable = true;
+  #services.proxmox-ve.enable = true;
 
-  nixpkgs.overlays = [
-    inputs.proxmox-nixos.overlays."x86_64-linux"
-  ];
+  #nixpkgs.overlays = [
+  #  inputs.proxmox-nixos.overlays."x86_64-linux"
+  #];
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
@@ -111,6 +111,11 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
+
+  hardware.logitech.wireless = {
+    enable = true;
+    enableGraphical = true;
+  };
 
   environment = {
     binsh = "${pkgs.dash}/bin/dash";
@@ -160,7 +165,7 @@
     };
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
   # List services that you want to enable:
 
@@ -169,7 +174,8 @@
   users.users.enkai = {
     description = "Enkaiyuegure";
     openssh.authorizedKeys.keys = [
-      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCYfzHsu8HcbQUNyLk0b7zOfy3tXk0gMsrgBi0u8CEHDncWgMxgQ77dgDLHXpcXEY3KaGHPDyTKtnCKv7hPVuRQjkbsaoHhiVJW7qcmEbCmuZgsllYqIn2I3mFO6Ubckdu+JWjfOkUhVRFl5ZG5eI4mqZFyjFdDlSGSiFmS81qB5ry6mGInzZYnJuROTwiei8vW2yTfAIloAFPghq8qTzrcuMUXL7gVinaxrU7jVozEtJe0KR07oBpr/jUaeomuzy3R29CPu6+BBxRAMo6U02NxtevI+n0d1i5PbXRuZ8xxwWVQzlwkL9DjHls1tHUlZkYvnvYzHU/FUMlRuELPK+M3LS+ILqzCkK2D32UmukcFrcXnNe9TQy/3D0WI+m8lK69n67tskqaD84wxNAbnMjHMUcbX02BOXl+qTcG0nGP1cMbZrWvXbwkqhW4N6a97EKLxpOIA1gBQ3K6CFStdtKeXzMSkgfPap85x5cr3Zg03ZNOtw2QrZuCrAhO1JZHhF2Eqgx+kbmQGttouAs6Ftj1AX3ZNpTOXWk5Ryd6nH6SW68uv+u+ehUaU8n4TsmAAX27cX19K6IpKFJlKL6VB/BjtnyHj+HyjR0vDsSE5pdCiDY+bFPw0lkNn2vZE9UMUUepRSvi+qKmSI+9ZLpd/o6ZIclT/SHyLVOSnYSXnSzAetQ== enkaiyuegure@outlook.com"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE7+CvR7E+SBRqyrDnpjM5VzbYJssQXCiP4araLoKbiG enkai@zbook"
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC462r840QOv1JPMMZTVzgq5zaPyTV9tJKq2RBgMcLCEM0g5v714yOsoxwbdRkwYSrQaKEeTUIw6XCTrCf0xikjnkWd5cS8ow6jgrq6PF8R1YL5dh9TDpV2CK5C81EfCJDVJtPH/SP9hpGfI4ULIpe9ukfZEjkG+jP6Z+zCAiAofxIaUwU7Oku1deBL2cRHgY1aNGgAFr9mLZBkUfXi1tWe1N4nYs5bYWSr2QyEWWlvvN3A2lIXXKfR8I1oe6ipht8TeEVHRWBWx0zg8E/KHAVqCl+qoyY1ZT0YUknS38Ctfh5e3DfDPzxiqRNvsbkC3kxvQHknQuiUqjorZE3FiR5VN1BSeKak/Rs0sT7WBawULks1bsLSnqBkSMBs1cIMmixJb6tv14Lpqx9SWoRiR5Pj4DAi+nINl5N95WII9mV+kUSVVZVVUlhYe7RBR7OTnan2tmx36OJf7UIlnBAL6N7r4Ho/jjuSwxzmhWnmtnComB4T2fTHWRS4kufsi2Lql3ErgBB8vcdpQW1ZrDKIQN+WieZAQ/sJNEKtv2H+jRFP/lFlpfmnkP3am2Cyne2EfzYV9hy8+jFaC1zY7aEXxcsG2nVDiV8ac2Bng9B0P52m64rbnAC4Dyh9spwWlr7VgfOo1eoc1xrCmq2+8LsIv6jNzVz+lfEbWbYcDnMBuoRQoQ== enkai@ltp-omen-win"
     ];
   };
 
