@@ -1,51 +1,51 @@
 {
   description = "Nix Flakes Configuration of Enkaiyuegure";
 
-  outputs = inputs @ { self, ... }: 
-  let
-    selfPkgs = import ./pkgs;
-  in
-  inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-    debug = true;
-    flake = { 
-      overlays.default = selfPkgs.overlay;
-    };
-    imports = [
-      ./hosts/profiles
-      ./home/profiles
-      ./modules
-    ] ++ [
-      inputs.flake-root.flakeModule
-      inputs.treefmt-nix.flakeModule
-    ];
-    systems = [
-      "x86_64-linux"
-    ];
-    perSystem = { config, pkgs, ... }: {
-      treefmt.config = {
-        inherit (config.flake-root) projectRootFile;
-        package = pkgs.treefmt;
-        programs = {
-          nixpkgs-fmt.enable = true;
-          prettier.enable = true;
-          taplo.enable = true;
-          shfmt.enable = true;
-        };
+  outputs = inputs @ { self, ... }:
+    let
+      selfPkgs = import ./pkgs;
+    in
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      debug = true;
+      flake = {
+        overlays.default = selfPkgs.overlay;
       };
-
-      devShells = {
-        default = pkgs.mkShell {
-          nativeBuildInputs = with pkgs; [ git neovim sbctl just ];
-          inputsFrom = [
-            config.flake-root.devShell
-          ];
+      imports = [
+        ./hosts/profiles
+        ./home/profiles
+        ./modules
+      ] ++ [
+        inputs.flake-root.flakeModule
+        inputs.treefmt-nix.flakeModule
+      ];
+      systems = [
+        "x86_64-linux"
+      ];
+      perSystem = { config, pkgs, ... }: {
+        treefmt.config = {
+          inherit (config.flake-root) projectRootFile;
+          package = pkgs.treefmt;
+          programs = {
+            nixpkgs-fmt.enable = true;
+            prettier.enable = true;
+            taplo.enable = true;
+            shfmt.enable = true;
+          };
         };
+
+        devShells = {
+          default = pkgs.mkShell {
+            nativeBuildInputs = with pkgs; [ git neovim sbctl just ];
+            inputsFrom = [
+              config.flake-root.devShell
+            ];
+          };
+        };
+
+        formatter = config.treefmt.build.wrapper;
+
       };
-
-      formatter = config.treefmt.build.wrapper;
-
     };
-  };
 
   inputs = {
     ##########################################systemBase###########################################
@@ -97,7 +97,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     #==============================The Proxmox Hypervisor, on NixOS#==============================#
-    #proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
+    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
     #######################################othersNixProject########################################
     #=========================================Gaming on Nix=======================================#
     nix-gaming.url = "github:fufexan/nix-gaming";

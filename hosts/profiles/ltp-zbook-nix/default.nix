@@ -71,11 +71,11 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  #services.proxmox-ve.enable = true;
+  services.proxmox-ve.enable = true;
 
-  #nixpkgs.overlays = [
-  #  inputs.proxmox-nixos.overlays."x86_64-linux"
-  #];
+  nixpkgs.overlays = [
+    inputs.proxmox-nixos.overlays."x86_64-linux"
+  ];
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
