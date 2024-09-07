@@ -1,6 +1,7 @@
 {
   imports = [
     ./browsers
+    ./devTools.nix
     ./common.nix
     ./git.nix
     ./media.nix
