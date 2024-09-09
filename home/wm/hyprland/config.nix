@@ -164,7 +164,11 @@
       bind = Super, H, workspace, -1
       bind = Super, right, workspace, e+1
       bind = Super, left, workspace,e-1
+      bind = Super, B, workspace,FF
       bind = Super, T, workspace,TG
+      bind = Super, D, workspace,DC
+      bind = Super, Q, workspace,QQ
+      bind = Super, O, workspace,OBS
       bind = Super, M, workspace,Music
 
       #-------------------------------#
@@ -223,9 +227,12 @@
       #------------------------#
       # quickly launch program #
       #------------------------# 
-      bind=Super,B,exec,nvidia-offload firefox
-      bind=Super,M,exec,kitty --class="musicfox" --hold sh -c "musicfox" 
-      bind=Super,q,exec, qq --enable-features=UseOzonePlatform --ozone-platform=x11
+      bind=Super CTRL, B,exec, firefox
+      bind=Super CTRL, M,exec, kitty --class="musicfox" --hold sh -c "musicfox" 
+      bind=Super CTRL, D,exec, discord 
+      bind=Super CTRL, T,exec, telegram-desktop 
+      bind=Super CTRL, O,exec, obs 
+      bind=Super CTRL, Q,exec, qq --enable-features=UseOzonePlatform --ozone-platform=x11
 
       #-----------------------------------------#
       # control volume,brightness,media players-#
@@ -310,8 +317,16 @@
       windowrule=move 25%-,nemo
       windowrule=size 960 540,nemo
       windowrule=opacity 0.95,title:Telegram
+      windowrule=opacity 0.95,title:Discord
+      windowrule=opacity 0.95,title:QQ
+      windowrule=opacity 0.95,title:Firefox
+      windowrule=opacity 0.95,title:OBS
       windowrule=animation slide right,kitty
+      windowrule=workspace name:FF, title:Firefox
       windowrule=workspace name:TG, title:Telegram
+      windowrule=workspace name:QQ, title:QQ
+      windowrule=workspace name:DC, title:Discord
+      windowrule=workspace name:OBS, title:OBS
       windowrule=workspace name:Music, musicfox
       windowrule=float,ncmpcpp
       windowrule=move 25%-,ncmpcpp
