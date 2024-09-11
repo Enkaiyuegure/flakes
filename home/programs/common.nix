@@ -7,12 +7,9 @@
 
     # fun
     go-musicfox
-    yesplaymusic
     prismlauncher
     discord
     moonlight-qt
-    logiops
-    piper
 
     #AI
     ollama
