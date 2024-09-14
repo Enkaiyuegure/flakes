@@ -169,6 +169,7 @@
       bind = Super, D, workspace,DC
       bind = Super, Q, workspace,QQ
       bind = Super, O, workspace,OBS
+      bind = Super, W, workspace,ML
       bind = Super, M, workspace,Music
 
       #-------------------------------#
@@ -232,6 +233,7 @@
       bind=Super CTRL, D,exec, discord 
       bind=Super CTRL, T,exec, telegram-desktop 
       bind=Super CTRL, O,exec, obs 
+      bind=Super CTRL, W,exec, moonlight 
       bind=Super CTRL, Q,exec, qq --enable-features=UseOzonePlatform --ozone-platform=x11
 
       #-----------------------------------------#
@@ -324,6 +326,7 @@
       windowrule=animation slide right,kitty
       windowrule=workspace name:FF, title:Firefox
       windowrule=workspace name:TG, title:Telegram
+      windowrule=workspace name:ML, title:Moonlight
       windowrule=workspace name:QQ, title:QQ
       windowrule=workspace name:DC, title:Discord
       windowrule=workspace name:OBS, title:OBS
