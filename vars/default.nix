@@ -1,7 +1,8 @@
-{
+{ lib }: {
   userName = "enkai";
   userFullname = "Enkaiyuegure";
   userEmail = "enkaiyuegure@outlook.com";
+  networking = import ./networking.nix { inherit lib; };
   # Public Keys that can be used to login to all my PCs, and servers.
   #
   # Since its authority is so large, we must strengthen its security:
