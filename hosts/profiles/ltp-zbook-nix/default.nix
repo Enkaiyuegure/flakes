@@ -33,6 +33,17 @@
     initrd.verbose = false;
   };
 
+  boot.supportedFilesystems = [
+    "ext4"
+    "btrfs"
+    "xfs"
+    "ntfs"
+    "fat"
+    "vfat"
+    "exfat"
+    "bcachefs"
+  ];
+
   networking.hostName = "ltp-zbook-nix"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

@@ -1,4 +1,4 @@
-{ self, inputs, ... }:
+{ self, inputs, lib, ... }:
 let
   #system-agnostic args
   module_args._module.args = {
@@ -6,7 +6,7 @@ let
   };
 
   myLib = import ../lib;
-  myVars = import ../vars;
+  myVars = import ../vars { inherit lib; };
 in
 {
   imports = [
