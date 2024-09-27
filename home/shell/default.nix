@@ -4,7 +4,7 @@ let
     "et" = "emacs -nw";
 
     "rm" = "bash ~/flakes/lib/scripts/rm-to-trash.sh";
-    "clear-trash" = "sudo rm /.trash/* -r";
+    "clear-trash" = "sudo rm ~/.trash/* -r";
 
     "rebuild" = "sudo nixos-rebuild switch --flake ~/flakes#";
     "change-build" = "bash ~/flakes/lib/scripts/nix-rebuild.sh";
