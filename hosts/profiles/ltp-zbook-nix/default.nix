@@ -13,6 +13,15 @@
       ./modules.nix
     ];
 
+  networking = {
+    interfaces = {
+      enp2s0.ipv4.addresses = [{
+        address = "10.10.50.2";
+        prefixLength = 16;
+      }];
+    };
+  };
+
   # Use the systemd-boot EFI boot loader.
   boot = {
     bootspec.enable = true;
@@ -83,6 +92,13 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   services.proxmox-ve.enable = true;
+
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
 
   nixpkgs.overlays = [
     inputs.proxmox-nixos.overlays."x86_64-linux"
