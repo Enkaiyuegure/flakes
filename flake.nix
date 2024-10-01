@@ -13,7 +13,7 @@
       imports = [
         ./hosts/profiles
         ./home/profiles
-        ./modules
+        ./old-modules
       ] ++ [
         inputs.flake-root.flakeModule
         inputs.treefmt-nix.flakeModule

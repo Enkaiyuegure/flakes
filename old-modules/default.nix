@@ -5,16 +5,16 @@ let
     inherit inputs self;
   };
 
-  myLib = import ../lib;
-  myVars = import ../vars { inherit lib; };
+  mylib = import ../lib;
+  myvars = import ../vars { inherit lib; };
 in
 {
   imports = [
     {
       _module.args = {
         inherit module_args;
-        inherit myVars;
-        inherit myLib;
+        inherit myvars;
+        inherit mylib;
 
         #NixOS modules
         hostModules = [
@@ -38,7 +38,7 @@ in
 
         #HomeManager modules
         homeModules = [
-          (import ./home { inherit myVars myLib; })
+          (import ./home { inherit myvars mylib; })
           module_args
           inputs.anyrun.homeManagerModules.anyrun
           inputs.ags.homeManagerModules.default

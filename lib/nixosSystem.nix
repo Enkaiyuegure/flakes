@@ -5,7 +5,7 @@
 , nixos-modules
 , home-modules ? [ ]
 , specialArgs ? (genSpecialArgs system)
-, myVars
+, myvars
 , ...
 }:
 let
@@ -27,7 +27,7 @@ nixpkgs.lib.nixosSystem {
             home-manager.useUserPackages = true;
 
             home-manager.extraSpecialArgs = specialArgs;
-            home-manager.users."${myVars.userName}".imports = home-modules;
+            home-manager.users."${myvars.username}".imports = home-modules;
           }
         ]
     );

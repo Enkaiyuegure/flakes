@@ -4,10 +4,10 @@
     ../../statusBar
     ../../ai
 
-    ../../../modules/hosts/dae.nix
+    ../../../old-modules/hosts/dae.nix
     ../../../lib/disko_layout/tower-qtj1-nix.nix
-    ../../../modules/hosts/impermanence.nix
-    ../../../modules/hosts/virtualisation
+    ../../../old-modules/hosts/impermanence.nix
+    ../../../old-modules/hosts/virtualisation
 
 
   ];

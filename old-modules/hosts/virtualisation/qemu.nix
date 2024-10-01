@@ -1,5 +1,5 @@
 #Qemu/KVM with virt-manager
-{ pkgs, myVars, ... }:
+{ pkgs, myvars, ... }:
 {
   environment = {
     systemPackages = with pkgs; [
@@ -19,5 +19,5 @@
   };
   networking.firewall.trustedInterfaces = [ "virbr0" ];
   programs.dconf.enable = true;
-  users.groups.libvirtd.members = [ "${myVars.userName}" ];
+  users.groups.libvirtd.members = [ "${myvars.username}" ];
 }

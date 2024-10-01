@@ -1,7 +1,7 @@
 { lib }: {
-  userName = "enkai";
-  userFullname = "Enkaiyuegure";
-  userEmail = "enkaiyuegure@outlook.com";
+  username = "enkai";
+  userfullname = "Enkaiyuegure";
+  useremail = "enkaiyuegure@outlook.com";
   networking = import ./networking.nix { inherit lib; };
   # Public Keys that can be used to login to all my PCs, and servers.
   #

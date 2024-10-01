@@ -1,4 +1,4 @@
-{ inputs, hostModules, homeImports, myVars, myLib, ... }:
+{ inputs, hostModules, homeImports, myvars, mylib, ... }:
 {
   flake.nixosConfigurations =
     let
@@ -8,7 +8,7 @@
     {
       "ltp-zbook-nix" = nixosSystem rec{
         specialArgs = {
-          inherit myVars myLib;
+          inherit myvars mylib;
           asztal = packages.x86_64-linux.default;
         };
         modules = [
@@ -17,33 +17,33 @@
             home-manager = {
               backupFileExtension = "backup";
               extraSpecialArgs = inputs;
-              users.${myVars.userName}.imports = homeImports."${myVars.userName}@ltp-zbook-nix";
+              users.${myvars.username}.imports = homeImports."${myvars.username}@ltp-zbook-nix";
             };
           }
         ] ++ hostModules;
       };
       "tower-qtj1-nix" = nixosSystem {
-        specialArgs = { inherit myVars; };
+        specialArgs = { inherit myvars; };
         modules = [
           ./tower-qtj1-nix
           {
             home-manager = {
               backupFileExtension = "backup";
               extraSpecialArgs = inputs;
-              users.${myVars.userName}.imports = homeImports."${myVars.userName}@tower-qtj1-nix";
+              users.${myvars.username}.imports = homeImports."${myvars.username}@tower-qtj1-nix";
             };
           }
         ] ++ hostModules;
       };
       "router-n100-nix" = nixosSystem {
-        specialArgs = { inherit myVars; };
+        specialArgs = { inherit myvars; };
         modules = [
           ./router-n100-nix
           {
             home-manager = {
               backupFileExtension = "backup";
               extraSpecialArgs = inputs;
-              users.${myVars.userName}.imports = homeImports."${myVars.userName}@router-n100-nix";
+              users.${myvars.username}.imports = homeImports."${myvars.username}@router-n100-nix";
             };
           }
         ] ++ hostModules;
