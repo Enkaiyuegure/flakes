@@ -99,6 +99,8 @@
     #==============================The Proxmox Hypervisor, on NixOS#==============================#
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
     #######################################othersNixProject########################################
+    #================================A Nushell environment for Nix================================#
+    nuenv.url = "github:DeterminateSystems/nuenv";
     #=========================================Gaming on Nix=======================================#
     nix-gaming.url = "github:fufexan/nix-gaming";
     #======================Nix User Repository: User contributed nix packages=====================#
