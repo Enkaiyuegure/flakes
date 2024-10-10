@@ -3,11 +3,11 @@ let
     "vi" = "nvim";
     "et" = "emacs -nw";
 
-    "rm" = "bash ~/flakes/lib/scripts/rm-to-trash.sh";
+    "rm" = "bash ~/Flakes/lib/scripts/rm-to-trash.sh";
     "clear-trash" = "sudo rm ~/.trash/* -r";
 
-    "rebuild" = "sudo nixos-rebuild switch --flake ~/flakes#";
-    "change-build" = "bash ~/flakes/lib/scripts/nix-rebuild.sh";
+    "rebuild" = "sudo nixos-rebuild switch --flake ~/Flakes#";
+    "change-build" = "bash ~/Flakes/lib/scripts/nix-rebuild.sh";
 
     "r" = "ranger";
 

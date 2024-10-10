@@ -2,6 +2,7 @@
   imports = [
     ../../wm/i3.nix
     ../../statusBar
+    ../../editors
 
     ../../../old-modules/hosts/dae.nix
     ../../../lib/disko_layout/ltp-zbook-nix.nix

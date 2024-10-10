@@ -1,5 +1,5 @@
 set -e
 
-cd ~/flakes
+cd ~/Flakes
 
-sudo nixos-rebuild switch --flake ~/flakes#
+sudo nixos-rebuild switch --flake ~/Flakes#

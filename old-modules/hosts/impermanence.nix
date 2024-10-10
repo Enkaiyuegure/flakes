@@ -47,8 +47,8 @@
     # the following directories will be passed to /persistent/home/$USER
     users.enkai = {
       directories = [
-        "codes"
-        "flakes"
+        "Codes"
+        "Flakes"
         "tmp"
 
         "Downloads"
@@ -95,7 +95,7 @@
         ".config/freerdp"
 
         # doom-emacs
-       # ".config/emacs"
+        # ".config/emacs"
         "org" #  org files
 
         # vscode

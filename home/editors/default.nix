@@ -3,7 +3,7 @@
     #./nvim
     ./neovim
     #./doomemacs
-    ./emacs
+    #./emacs
     #@./typora
   ];
 }
