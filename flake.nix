@@ -11,8 +11,8 @@
         overlays.default = selfPkgs.overlay;
       };
       imports = [
-        ./hosts/profiles
-        ./home/profiles
+        ./old-hosts/profiles
+        ./old-home/profiles
         ./old-modules
       ] ++ [
         inputs.flake-root.flakeModule

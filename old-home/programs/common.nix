@@ -4,6 +4,7 @@
     ripgrep
     yq-go # https://github.com/mikefarah/yq
     htop
+    pandoc
 
     # fun
     go-musicfox
