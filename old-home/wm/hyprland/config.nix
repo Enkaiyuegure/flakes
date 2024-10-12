@@ -52,9 +52,7 @@
       }
 
       master {
-        new_is_master = true
         special_scale_factor = 0.8
-        new_is_master = true
         no_gaps_when_only = false
       }
 
