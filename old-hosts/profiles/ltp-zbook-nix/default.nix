@@ -157,6 +157,10 @@
     ];
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-11.5.0"
+  ];
+
   services.zerotierone = {
     enable = true;
     joinNetworks = [

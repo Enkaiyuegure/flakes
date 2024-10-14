@@ -2,9 +2,10 @@
   imports = [
     #./nvim
     ./neovim
-    ./joplin
     #./doomemacs
-    #./emacs
-    #@./typora
+    ./emacs
+    ./obsidian
+    ./zotero
+    ./typora
   ];
 }
