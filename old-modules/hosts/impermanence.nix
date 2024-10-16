@@ -48,6 +48,7 @@
     users.enkai = {
       directories = [
         "Codes"
+        "Projects"
         "Flakes"
         "tmp"
 
