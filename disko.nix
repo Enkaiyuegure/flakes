@@ -64,6 +64,8 @@
         settings = {
           fallbackToPassword = true;
           allowDiscards = true;
+          keyFile = "/dev/disk/by-id/usb-USB_SanDisk_3.2Gen1_01011b8acbfd37a92b47e06b638fed6702991290685c88ebe94a14e11239f8fd5a0b000000000000000000007f5d6d2d00001c0083558107c52e20c3-0\:0";
+          keyFileSize = 256;
         };
 	passwordFile = "/tmp/secret.key";
         #additionalKeyFiles = [
