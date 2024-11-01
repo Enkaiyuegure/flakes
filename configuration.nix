@@ -51,7 +51,8 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
   
 
   # Configure keymap in X11
