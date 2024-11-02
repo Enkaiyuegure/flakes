@@ -1,6 +1,11 @@
 { pkgs
+, myVars
 , ...
-}: {
+}: 
+let
+  inherit (myVars) userName;
+in
+{
   environment.systemPackages = [
     # `sudo ncdu -x /`
     pkgs.ncdu
@@ -45,7 +50,7 @@
     ];
 
     # the following directories will be passed to /persistent/home/$USER
-    users.enkai = {
+    users.${userName} = {
       directories = [
         "Codes"
         "Projects"

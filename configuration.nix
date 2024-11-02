@@ -2,8 +2,10 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
-
+{ config, lib, pkgs, myVars, ... }:
+let
+  inherit (myVars) userName;
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -75,17 +77,19 @@
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.enkai = {
+  users.users.${userName} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    initialHashedPassword = "$6$cFYVfLoLFZURhDXT$ydrUHmAi792bvc53jdVxuxippqbBJlVQqV/L/qZlfZNF5T0U9V0rP1o2nXlaKz0s4bsZNk.dkjeFtDf2XimOM1";
+    inherit (myVars) initialHashedPassword;
     packages = with pkgs; [
       neovim
       tree
     ];
   };
 
-  users.users.root.initialHashedPassword = "$6$cFYVfLoLFZURhDXT$ydrUHmAi792bvc53jdVxuxippqbBJlVQqV/L/qZlfZNF5T0U9V0rP1o2nXlaKz0s4bsZNk.dkjeFtDf2XimOM1";
+  users.users.root = {
+    inherit (myVars) initialHashedPassword;
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
