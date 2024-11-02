@@ -11,6 +11,15 @@ in
     pkgs.ncdu
   ];
 
+  # issue: https://github.com/nix-community/impermanence/issues/229
+  # Use symlink
+  systemd.tmpfiles.rules = [
+    "L /etc/machine-id - - - - /persist/etc/machine-id"
+  ];
+  # Or
+  # boot.initrd.systemd.suppressedUnits = [ "systemd-machine-id-commit.service" ];
+  # systemd.suppressedSystemUnits = [ "systemd-machine-id-commit.service" ];
+
   # There are two ways to clear the root filesystem on every boot:
   ##  1. use tmpfs for /
   ##  2. (btrfs/zfs only)take a blank snapshot of the root filesystem and revert to it on every boot via:
@@ -45,7 +54,7 @@ in
       # "/usr/share/icons"
     ];
     files = [
-      "/etc/machine-id"
+      #"/etc/machine-id"
       "/etc/create-ap.conf"
     ];
 

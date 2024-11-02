@@ -6,7 +6,7 @@
     #================================Nix Packages collection & NixOS==============================#
     #-----------Official NixOS package source, using nixos's unstable branch by default-----------#
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    #-------------------------Simplify Nix Flakes with the module system--------------------------#
+    #=========================Simplify Nix Flakes with the module system==========================#
     flake-parts.url = "github:hercules-ci/flake-parts";
     #===================Declarative disk partitioning and formatting using nix====================#
     disko = {
