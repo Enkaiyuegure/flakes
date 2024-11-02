@@ -4,6 +4,7 @@
     modules = [
       ./configuration.nix
       inputs.disko.nixosModules.disko
+      inputs.impermanence.nixosModules.impermanence
     ];
   };
 }
