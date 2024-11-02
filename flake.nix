@@ -18,15 +18,5 @@
     #############################################end###############################################
   };
 
-  outputs = inputs@{ flake-parts, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [
-        ./dashao.nix
-      ];
-      systems = [ "x86_64-linux" ];
-      perSystem = { config, self', inputs', pkgs, system, ... }: {
-      };
-      flake = {
-      };
-    };
+  outputs = inputs: import ./outputs inputs;
 }
