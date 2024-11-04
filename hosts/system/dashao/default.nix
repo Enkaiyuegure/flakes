@@ -1,13 +1,12 @@
-{myVars, ...}:
+{ myVars, myLib, disko, impermanence, ...}:
 let
   hostName = "dashao"; # Define your hostname.
 in {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./configuration.nix
-    ./impermanence.nix
-    ./disko.nix
+  imports = (
+    myLib.scanPaths ./.)
+    ++ [
+    disko.nixosModules.disko
+    impermanence.nixosModules.impermanence 
   ];
 
   networking = {

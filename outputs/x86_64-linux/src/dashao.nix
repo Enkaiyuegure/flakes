@@ -13,14 +13,13 @@
   name = "dashao";
   base-modules = {
     nixos-modules = map myLib.relativeToRoot [
-      "hosts/dashao"
+      "hosts/system/${name}"
       "dae.nix"
       "gnome.nix"
-    ] ++ (with inputs; [
-      disko.nixosModules.disko
-      impermanence.nixosModules.impermanence 
-    ]);
+    ];
     home-modules = map myLib.relativeToRoot [
+      "hosts/user/${name}"
+      "home/linux/gui.nix"
     ];
   };
 
