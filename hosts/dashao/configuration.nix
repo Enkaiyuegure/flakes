@@ -3,16 +3,7 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 { config, lib, pkgs, myVars, ... }:
-let
-  inherit (myVars) userName;
-in
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./impermanence.nix
-    ];
-
   boot = {
     bootspec.enable = true;
     loader = {
@@ -31,14 +22,6 @@ in
     initrd.verbose = false;
   };
 
-  networking.hostName = "dashao"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # Set your time zone.
-  time.timeZone = "Asia/Shanghai";
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -55,8 +38,6 @@ in
   services.xserver.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
-  
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -77,13 +58,14 @@ in
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${userName} = {
+  users.users.${myVars.username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     inherit (myVars) initialHashedPassword;
     packages = with pkgs; [
       neovim
       tree
+      moonlight-qt
     ];
   };
 
