@@ -93,6 +93,21 @@
       url = "github:NixOS/flake-registry";
       flake = false;
     };
+    nur-ryan4yin.url = "github:ryan4yin/nur-packages";
+    # doom-emacs is a configuration framework for GNU Emacs.
+    doomemacs = {
+      url = "github:doomemacs/doomemacs";
+      flake = false;
+    };
+    nixpak = {
+      url = "github:nixpak/nixpak";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # anyrun - a wayland launcher
+    anyrun = {
+      url = "github:Kirottu/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     #############################################end###############################################
   };
 
