@@ -1,4 +1,4 @@
-{ myVars, myLib, disko, impermanence, ...}:
+{ myVars, myLib, disko, impermanence, lix-module, ...}:
 let
   hostName = "dashao"; # Define your hostname.
 in {
@@ -7,6 +7,7 @@ in {
     ++ [
     disko.nixosModules.disko
     impermanence.nixosModules.impermanence 
+    lix-module.nixosModules.default
   ];
 
   networking = {

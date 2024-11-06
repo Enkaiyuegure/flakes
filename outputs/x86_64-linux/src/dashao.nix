@@ -14,8 +14,8 @@
   base-modules = {
     nixos-modules = map myLib.relativeToRoot [
       "hosts/system/${name}"
+      "modules/nixos/desktop.nix"
       "dae.nix"
-      "gnome.nix"
     ];
     home-modules = map myLib.relativeToRoot [
       "hosts/user/${name}"
@@ -24,7 +24,14 @@
   };
 
   modules = {
-    nixos-modules = base-modules.nixos-modules;
+    nixos-modules = 
+      [
+        {
+          modules.desktop.xorg.enable = true;
+          modules.desktop.gnome.enable = true;
+        }
+      ]
+      ++ base-modules.nixos-modules;
     home-modules = base-modules.home-modules;
   };
 in {

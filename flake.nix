@@ -8,6 +8,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable-small";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    #================A modern, delicious implementation of the Nix package manager================#
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-1.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     #=========================Simplify Nix Flakes with the module system==========================#
     flake-parts.url = "github:hercules-ci/flake-parts";
     #==========A `flake-parts` module for finding your way to the project root directory==========#
@@ -76,7 +81,7 @@
     };
     #============================Filesystem-based module system for Nix===========================#
     haumea = {
-      url = "github:nix-community/haumea/v0.2.2";
+      url = "github:nix-community/haumea";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     #=========================#Nix language server, based on nix libraries========================#
