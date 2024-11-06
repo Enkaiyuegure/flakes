@@ -7,7 +7,7 @@
 let
   inherit (inputs.nixpkgs) lib;
   myLib = import ../lib {inherit lib;};
-  myVars = import ../vars;
+  myVars = import ../vars {inherit lib;};
 
   # Add my custom lib, vars, nixpkgs instance, and all the inputs to specialArgs,
   # so that I can use them in all my nixos/home-manager/darwin modules.

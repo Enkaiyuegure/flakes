@@ -4,30 +4,12 @@
 
 { config, lib, pkgs, myVars, ... }:
 {
-  boot = {
-    bootspec.enable = true;
-    loader = {
-      grub = {
-        enable = true;
-        device = "nodev";
-        efiSupport = true;
-        efiInstallAsRemovable = true;
-      };
-      efi = {
-        #canTouchEfiVariables = true;
-      };
-      timeout = 3;
-    };
-    consoleLogLevel = 0;
-    initrd.verbose = false;
-  };
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
@@ -56,20 +38,6 @@
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${myVars.username} = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    inherit (myVars) initialHashedPassword;
-    packages = with pkgs; [
-      neovim
-      tree
-      moonlight-qt
-    ];
-  };
-
-  users.users.root = {
-    inherit (myVars) initialHashedPassword;
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

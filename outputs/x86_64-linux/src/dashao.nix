@@ -27,8 +27,8 @@
     nixos-modules = 
       [
         {
-          modules.desktop.xorg.enable = true;
-          modules.desktop.gnome.enable = true;
+          modules.nixos.desktop.xorg.enable = true;
+          modules.nixos.desktop.gnome.enable = true;
         }
       ]
       ++ base-modules.nixos-modules;

@@ -4,11 +4,11 @@
   config,
   ...
 }: {
-  options.modules.desktop.gnome = {
+  options.modules.nixos.desktop.gnome = {
     enable = lib.mkEnableOption "Gnome Desktop Environment";
   };
 
-  config = lib.mkIf config.modules.desktop.gnome.enable {
+  config = lib.mkIf config.modules.nixos.desktop.gnome.enable {
     environment = {
       systemPackages = with pkgs; [
         morewaita-icon-theme

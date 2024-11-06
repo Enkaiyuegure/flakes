@@ -3,7 +3,6 @@
   myVars,
   nuenv,
   nixpkgs,
-  flake-registry,
   lib,
   ...
 } @ args: {
@@ -18,8 +17,6 @@
   # nix.package = pkgs.nixVersions.nix_2_22;
 
   environment.systemPackages = with pkgs; [
-    vim # basic editor
-
     git # used by nix flakes
     git-lfs # used by huggingface models
 
@@ -63,69 +60,48 @@
     openssh.authorizedKeys.keys = myVars.sshAuthorizedKeys;
   };
 
-  nix = {
-    channel.enable = true;
+  nix.settings = {
+    # enable flakes globally
+    experimental-features = [ "nix-command" "flakes" "auto-allocate-uids" "cgroups" ];
 
-    # make `nix repl '<nixpkgs>'` use the same nixpkgs as the one used by this flake.
-    # discard all the default paths, and only use the one from this flake.
-    nixPath = lib.mkForce [ "nixpkgs=${nixpkgs}" ];
-    settings = {
+    # given the users in this list the right to specify additional substituters via:
+    #    1. `nixConfig.substituers` in `flake.nix`
+    #    2. command line args `--options substituers http://xxx`
+    trusted-users = [ "root" "@wheel" ];
 
-      # https://github.com/NixOS/nix/issues/9574
-      nix-path = lib.mkForce "nixpkgs=flake:nixpkgs";
+    # substituers that will be considered before the official ones(https://cache.nixos.org)
+    substituters = [
+      # cache mirror located in China
+      # status: https://mirrors.ustc.edu.cn/status/
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+      # status: https://mirror.sjtu.edu.cn/
+      "https://mirror.sjtu.edu.cn/nix-channels/store"
 
-      # enable flakes globally
-      experimental-features = [ "nix-command" "flakes" "auto-allocate-uids" "cgroups" ];
-      auto-allocate-uids = true;
-      use-cgroups = true;
-      auto-optimise-store = true; # Optimise syslinks
-      accept-flake-config = false;
-      flake-registry = "${flake-registry}/flake-registry.json";
-      builders-use-substitutes = true;
-      keep-derivations = true;
-      keep-outputs = true;
+      "https://nix-community.cachix.org"
+      # my own cache server
+      "https://ryan4yin.cachix.org"
+      # cuda-maintainer's cache server
+      "https://cuda-maintainers.cachix.org"
+    ];
 
-      # substituers that will be considered before the official ones(https://cache.nixos.org)
-      substituters = [
-        # cache mirror located in China
-        # status: https://mirrors.ustc.edu.cn/status/
-        "https://mirrors.ustc.edu.cn/nix-channels/store"
-        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-        # status: https://mirror.sjtu.edu.cn/
-        "https://mirror.sjtu.edu.cn/nix-channels/store"
-
-        "https://nix-community.cachix.org"
-        # cuda-maintainer's cache server
-        "https://cuda-maintainers.cachix.org"
-        "https://cache.saumon.network/proxmox-nixos"
-        "https://nix-gaming.cachix.org"
-      ];
-
-      trusted-public-keys = [
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
-        "proxmox-nixos:nveXDuVVhFDRFx8Dn19f1WDEaNRJjPrF2CPD2D+m1ys="
-        "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
-      ];
-
-      # given the users in this list the right to specify additional substituters via:
-      #    1. `nixConfig.substituers` in `flake.nix`
-      #    2. command line args `--options substituers http://xxx`
-      trusted-users = [ "root" "@wheel" ];
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 3d";
-    };
-
-  # make `nix run nixpkgs#nixpkgs` use the same nixpkgs as the one used by this flake.
-    registry.nixpkgs.flake = nixpkgs;
-    extraOptions = ''
-      keep-outputs            = true
-      keep-derivations        = true
-    '';
+    trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "ryan4yin.cachix.org-1:Gbk27ZU5AYpGS9i3ssoLlwdvMIh0NxG0w8it/cv9kbU="
+      "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+    ];
+    builders-use-substitutes = true;
   };
 
+  # make `nix run nixpkgs#nixpkgs` use the same nixpkgs as the one used by this flake.
+  nix.registry.nixpkgs.flake = nixpkgs;
+
   environment.etc."nix/inputs/nixpkgs".source = "${nixpkgs}";
+
+  # make `nix repl '<nixpkgs>'` use the same nixpkgs as the one used by this flake.
+  # discard all the default paths, and only use the one from this flake.
+  nix.nixPath = lib.mkForce [ "nixpkgs=${nixpkgs}" ];
+
+  # https://github.com/NixOS/nix/issues/9574
+  nix.settings.nix-path = lib.mkForce "nixpkgs=flake:nixpkgs";
 }

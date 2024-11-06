@@ -10,52 +10,19 @@ with lib; let
 in
 {
   imports = [
-    #./base
+    ./base
     ../base
 
     ./desktop
   ];
 
-  options.modules.desktop = {
-    wayland = {
-      enable = mkEnableOption "Wayland Display Server";
-    };
-    xorg = {
-      enable = mkEnableOption "Xorg Display Server";
-    };
+  options.modules.nixos.desktop = {
+    xorg.enable = mkEnableOption "Xorg Display Server";
+    wayland.enable = mkEnableOption "Wayland Display Server";
   };
 
   config = mkMerge [
-    (mkIf config.modules.desktop.wayland.enable {
-      ##########################################################
-      # NixOS's Configuration for Wayland based Window Manager #
-      ##########################################################
-      xdg.portal = {
-        enable = true;
-        wlr.enable = true;
-        extraPortals = with pkgs; [
-          xdg-desktop-portal-wlr
-        ];
-      };
-
-      services = {
-        xserver.enable = false; # disable xorg server
-        # https://wiki.archlinux.org/title/Greetd
-        greetd = {
-          enable = true;
-          settings = {
-            default_session = {
-              user = username;
-            };
-          };
-        };
-      };
-
-      # fix https://github.com/ryan4yin/nix-config/issues/10
-      security.pam.services.swaylock = {};
-    })
-
-    (mkIf config.modules.desktop.xorg.enable {
+    (mkIf config.modules.nixos.desktop.xorg.enable {
       #########################################
       # NixOS's Configuration for Xorg Server #
       #########################################
@@ -69,6 +36,7 @@ in
             enable = true;
             user = username;
           };
+
           # use a fake session to skip desktop manager
           # and let Home Manager take care of the X session
           defaultSession = "hm-session";
@@ -90,10 +58,41 @@ in
               }
             ];
           };
+
           # Configure keymap in X11
           xkb.layout = "us";
         };
       };
+    })
+
+    (mkIf config.modules.nixos.desktop.wayland.enable {
+      ##########################################################
+      # NixOS's Configuration for Wayland based Window Manager #
+      ##########################################################
+      xdg.portal = {
+        enable = true;
+        wlr.enable = true;
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-wlr
+        ];
+      };
+
+      services = {
+        xserver.enable = false; # disable xorg server
+
+        # https://wiki.archlinux.org/title/Greetd
+        greetd = {
+          enable = true;
+          settings = {
+            default_session = {
+              user = username;
+            };
+          };
+        };
+      };
+
+      # fix https://github.com/ryan4yin/nix-config/issues/10
+      security.pam.services.swaylock = {};
     })
   ];
 }
