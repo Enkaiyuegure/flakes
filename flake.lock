@@ -1313,6 +1313,7 @@
         "nur-ryan4yin": "nur-ryan4yin",
         "pre-commit-hooks": "pre-commit-hooks",
         "proxmox-nixos": "proxmox-nixos",
+        "someSource": "someSource",
         "treefmt-nix": "treefmt-nix_2",
         "wallpapers": "wallpapers"
       }
@@ -1382,6 +1383,22 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "someSource": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1730922987,
+        "narHash": "sha256-tCCnb1PIVcuLx46QykDfmSpnQslivWSeLl81FnQvtSo=",
+        "owner": "Enkaiyuegure",
+        "repo": "someSource",
+        "rev": "d0a90ce16320917e151d78ff9c116634213febcf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Enkaiyuegure",
+        "repo": "someSource",
         "type": "github"
       }
     },

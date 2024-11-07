@@ -1,6 +1,7 @@
 {
   pkgs,
   nur-ryan4yin,
+  someSource,
   ...
 }: {
   home.file.".local/share/fcitx5/themes".source = "${nur-ryan4yin.packages.${pkgs.system}.catppuccin-fcitx5}/src";
@@ -14,6 +15,16 @@
     };
     "fcitx5/conf/classicui.conf".source = ./classicui.conf;
   };
+
+  home.file = {
+    ".local/share/fcitx5/rime/default.custom.yaml".source = ./default.custom.yaml;
+    ".local/share/fcitx5/rime" = {
+      source = "${someSource}/clover.schema";
+      recursive = true;
+      executable = true;
+    };
+  };
+
 
   i18n.inputMethod = {
     enabled = "fcitx5";

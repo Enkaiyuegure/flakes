@@ -108,6 +108,11 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    someSource = {
+      url = "github:Enkaiyuegure/someSource";
+      flake = false;
+    };
+
     #############################################end###############################################
   };
 
