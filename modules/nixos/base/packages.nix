@@ -3,7 +3,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     fastfetch # due to discontinuation of neofetch, using fastfetch instead
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     just # justfile
     nushell # nushell
 
@@ -43,5 +43,5 @@
   programs.bcc.enable = true;
 
   # replace default editor with vim
-  environment.variables.EDITOR = "vim";
+  environment.variables.EDITOR = "nvim";
 }
