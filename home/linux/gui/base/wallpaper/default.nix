@@ -1,31 +1,49 @@
-{
-  pkgs,
-  config,
-  lib,
-  wallpapers,
-  ...
-}: {
-  systemd.user.services.wallpaper = {
-    Unit = {
-      Description = "Wallpaper Switcher daemon";
-      After = ["graphical-session-pre.target" "xdg-desktop-autostart.target"];
-      Wants = ["graphical-session-pre.target"];
+{ pkgs, ... }:
+let
+  wallpapers = {
+    nord = {
+      url = "https://raw.githubusercontent.com/Enkaiyuegure/someSource/main/wall/nord.png";
+      sha256 = "sha256-arMdIQOK6AMNu04nDPf/WirbpFnMMB+ja64gkjApY10=";
     };
-    Install.WantedBy = ["graphical-session.target"];
-    Service = {
-      ExecStart = lib.getExe (pkgs.writeShellApplication {
-        name = "wallpaper";
-        runtimeInputs = with pkgs; [procps feh swaybg python3];
-        text = ''
-          export WALLPAPERS_DIR="${wallpapers}"
-          export WALLPAPERS_STATE_FILEPATH="${config.xdg.stateHome}/wallpaper-switcher/switcher_state"
-          export WALLPAPER_WAIT_MIN=60
-          export WALLPAPER_WAIT_MAX=180
-          exec ${./wallpaper-switcher.py}
+  };
+  default_wall = wallpapers.nord or (throw "Unknown theme");
+  wallpaper = pkgs.fetchurl {
+    inherit (default_wall) url sha256;
+  };
+in
+{
+
+  home.file.".config/i3/wallpaper.jpg".source = wallpaper;
+  systemd.user.services = {
+    swww = {
+      Unit = {
+        Description = "Efficient animated wallpaper daemon for wayland";
+        PartOf = [ "graphical-session.target" ];
+        After = [ "graphical-session.target" ];
+      };
+      Install.WantedBy = [ "graphical-session.target" ];
+      Service = {
+        Type = "simple";
+        ExecStart = ''
+          ${pkgs.swww}/bin/swww-daemon
         '';
-      });
-      RestartSec = 3;
-      Restart = "on-failure";
+        ExecStop = "${pkgs.swww}/bin/swww kill";
+        Restart = "on-failure";
+      };
+    };
+    default_wall = {
+      Unit = {
+        Description = "default wallpaper";
+        Requires = [ "swww.service" ];
+        After = [ "swww.service" ];
+        PartOf = [ "swww.service" ];
+      };
+      Install.WantedBy = [ "swww.service" ];
+      Service = {
+        ExecStart = ''${pkgs.swww}/bin/swww img "${wallpaper}" --transition-type random'';
+        Restart = "on-failure";
+        Type = "oneshot";
+      };
     };
   };
 }

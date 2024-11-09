@@ -28,9 +28,6 @@ in
       #########################################
 
       services = {
-        gvfs.enable = true; # Mount, trash, and other functionalities
-        tumbler.enable = true; # Thumbnail support for images
-
         displayManager = {
           autoLogin = {
             enable = true;
@@ -78,7 +75,8 @@ in
       };
 
       services = {
-        xserver.enable = false; # disable xorg server
+        xserver.enable = true; # disable xorg server
+        xserver.displayManager.lightdm.enable = true;
 
         # https://wiki.archlinux.org/title/Greetd
         greetd = {
@@ -86,6 +84,7 @@ in
           settings = {
             default_session = {
               user = username;
+              command ="$HOME/.wayland-session";
             };
           };
         };

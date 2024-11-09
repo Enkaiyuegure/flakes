@@ -4,9 +4,9 @@
   ...
 }:
 with lib; let
-  cfg = config.modules.desktop.hyprland;
+  cfg = config.home.linux.gui.hyprland;
 in {
-  options.modules.desktop.hyprland = {
+  options.home.linux.gui.hyprland = {
     nvidia = mkEnableOption "whether nvidia GPU is used";
   };
 

@@ -6,14 +6,24 @@
   ...
 } @ args:
 with lib; let
-  cfg = config.modules.desktop.hyprland;
+  cfg = config.home.linux.gui.hyprland;
+  wallpapers = {
+    nord = {
+      url = "https://raw.githubusercontent.com/Enkaiyuegure/someSource/main/wall/nord.png";
+      sha256 = "sha256-arMdIQOK6AMNu04nDPf/WirbpFnMMB+ja64gkjApY10=";
+    };
+  };
+  default_wall = wallpapers.nord or (throw "Unknown theme");
+  wallpaper = pkgs.fetchurl {
+    inherit (default_wall) url sha256;
+  };
 in {
   imports = [
     anyrun.homeManagerModules.default
     ./options
   ];
 
-  options.modules.desktop.hyprland = {
+  options.home.linux.gui.hyprland = {
     enable = mkEnableOption "hyprland compositor";
     settings = lib.mkOption {
       type = with lib.types; let

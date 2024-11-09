@@ -30,6 +30,8 @@
   services = {
     gvfs.enable = true; # Mount, trash, and other functionalities
     tumbler.enable = true; # Thumbnail support for images
+    udisks2.enable = true; # A DBus service that allows applications to query and manipulate storage devices
+    accounts-daemon.enable = true; # A DBus service for accessing the list of user accounts and information attached to those accounts
   };
 
   programs = {
