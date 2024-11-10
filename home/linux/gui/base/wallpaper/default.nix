@@ -12,6 +12,9 @@ let
   };
 in
 {
+  home.packages = with pkgs; [
+    mpvpaper
+  ];
 
   home.file.".config/i3/wallpaper.jpg".source = wallpaper;
   systemd.user.services = {

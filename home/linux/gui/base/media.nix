@@ -21,6 +21,8 @@
     vdpauinfo
     vulkan-tools
     glxinfo
+    go-musicfox
+    yesplaymusic
   ];
 
   # https://github.com/catppuccin/cava

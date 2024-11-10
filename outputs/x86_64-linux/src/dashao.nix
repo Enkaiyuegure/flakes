@@ -15,7 +15,7 @@
     nixos-modules = map myLib.relativeToRoot [
       "hosts/system/${name}"
       "modules/nixos/desktop.nix"
-      "dae.nix"
+      "modules/base/dae.nix"
       "hardening/nixpaks"
     ];
     home-modules = map myLib.relativeToRoot [
