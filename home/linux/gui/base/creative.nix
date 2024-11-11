@@ -1,13 +1,13 @@
 {
   pkgs,
   pkgs-unstable,
-  # pkgs-stable,
+  pkgs-stable,
   nur-ryan4yin,
   ...
 }: {
   home.packages = with pkgs; [
     # creative
-    blender # 3d modeling
+    pkgs-stable.blender # 3d modeling
     gimp # image editing
     inkscape # vector graphics
     krita # digital painting
