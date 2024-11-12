@@ -14,6 +14,7 @@ in
 {
   home.packages = with pkgs; [
     mpvpaper
+    swww
   ];
 
   home.file.".config/i3/wallpaper.jpg".source = wallpaper;

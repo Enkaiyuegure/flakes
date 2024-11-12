@@ -131,6 +131,7 @@
 
         "Notes"
         "Zotero"
+        "Calibre Library"
         "KiCad"
       ];
       files = [
