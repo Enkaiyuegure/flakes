@@ -48,4 +48,19 @@ in
     initialHashedPassword = config.users.users."${username}".initialHashedPassword;
     openssh.authorizedKeys.keys = config.users.users."${username}".openssh.authorizedKeys.keys;
   };
+
+  security = {
+    sudo = {
+      enable = true;
+      extraConfig = ''
+        ${username} ALL=(ALL) NOPASSWD:ALL
+      '';
+    };
+    doas = {
+      enable = true;
+      extraConfig = ''
+        permit nopass :wheel
+      '';
+    };
+  };
 }
