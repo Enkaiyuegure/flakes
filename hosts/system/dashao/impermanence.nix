@@ -82,6 +82,7 @@
         ".config/pulse"
         ".pki"
         ".steam" # steam games
+        
 
         # cloud native
         {
@@ -128,7 +129,6 @@
         ".wakatime"
         ".config/github-copilot"
 
-        ".trash"
         "Notes"
         "Zotero"
         "KiCad"

@@ -1,14 +1,8 @@
-{ myVars, myLib, disko, impermanence, lix-module, ...}:
+{ myVars, myLib, ...}:
 let
   hostName = "dashao"; # Define your hostname.
 in {
-  imports = (
-    myLib.scanPaths ./.)
-    ++ [
-    disko.nixosModules.disko
-    impermanence.nixosModules.impermanence 
-    lix-module.nixosModules.default
-  ];
+  imports = myLib.scanPaths ./.;
 
   networking = {
     inherit hostName;

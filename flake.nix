@@ -36,6 +36,12 @@
     #======Modules to help you handle persistent state on systems with ephemeral root storage=====#
     impermanence.url = "github:nix-community/impermanence";
     ######################################desktopEnvironment#######################################
+    #============================Manage KDE Plasma with Home Manager==============================#
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
     #=============================A customizable and extensible shell=============================#
     ags.url = "github:Aylur/ags";
     #=============================A material you color generation tool============================#

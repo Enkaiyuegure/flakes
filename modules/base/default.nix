@@ -53,6 +53,7 @@
     tree
     gnutar
     rsync
+    thefuck
   ];
 
   users.users.${myVars.username} = {
