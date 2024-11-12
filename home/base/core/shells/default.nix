@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs-unstable,
-  ...
-}: let
+{myLib, config, ...}: let
   shellAliases = {
     k = "kubectl";
 
@@ -14,21 +10,16 @@
   goBin = "${config.home.homeDirectory}/go/bin";
   rustBin = "${config.home.homeDirectory}/.cargo/bin";
 in {
-  # only works in bash/zsh, not nushell
+  # only works in bash/fish, not nushell
   home.shellAliases = shellAliases;
 
-  programs.nushell = {
-    enable = true;
-    package = pkgs-unstable.nushell;
-    configFile.source = ./config.nu;
-    inherit shellAliases;
-  };
-
-  programs.bash = {
-    enable = true;
-    enableCompletion = true;
-    bashrcExtra = ''
-      export PATH="$PATH:${localBin}:${goBin}:${rustBin}"
-    '';
-  };
+  imports = (
+    myLib.scanPaths ./.)
+    ++ [
+    {
+      _module.args = {
+        inherit shellAliases localBin goBin rustBin;
+      };
+    }
+  ];
 }
