@@ -4,9 +4,9 @@
 }: let
   username = myVars.username;
   hosts = [
-    "dashao-xorg-gnome-mutter"
-    "dashao-xorg-kde-kwin"
-    "dashao-wayland-none-hyprland"
+    "desktop-dashao-xorg-gnome-mutter"
+    "desktop-dashao-xorg-kde-kwin"
+    "desktop-dashao-wayland-none-hyprland"
   ];
 in
   lib.genAttrs hosts (_: "/home/${username}")

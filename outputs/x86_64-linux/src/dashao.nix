@@ -89,15 +89,15 @@
 in {
   nixosConfigurations = {
     # host with hyprland compositor
-    "${name}-xorg-gnome-mutter" = myLib.nixosSystem (modules-xorg-gnome-mutter // args);
-    "${name}-wayland-none-hyprland" = myLib.nixosSystem (modules-wayland-none-hyprland // args);
-    "${name}-xorg-kde-kwin" = myLib.nixosSystem (modules-xorg-kde-kwin // args);
+    "desktop-${name}-xorg-gnome-mutter" = myLib.nixosSystem (modules-xorg-gnome-mutter // args);
+    "desktop-${name}-wayland-none-hyprland" = myLib.nixosSystem (modules-wayland-none-hyprland // args);
+    "desktop-${name}-xorg-kde-kwin" = myLib.nixosSystem (modules-xorg-kde-kwin // args);
   };
 
   # generate iso image for hosts with desktop environment
   packages = {
-    "${name}-xorg-gnome-mutter" = inputs.self.nixosConfigurations."${name}-xorg-gnome-mutter".config.formats.iso;
-    "${name}-wayland-none-hyprland" = inputs.self.nixosConfigurations."${name}-wayland-none-hyprland".config.formats.iso;
-    "${name}-xorg-kde-kwin" = inputs.self.nixosConfigurations."${name}-xorg-kde-kwin".config.formats.iso;
+    "desktop-${name}-xorg-gnome-mutter" = inputs.self.nixosConfigurations."desktop-${name}-xorg-gnome-mutter".config.formats.iso;
+    "desktop-${name}-wayland-none-hyprland" = inputs.self.nixosConfigurations."desktop-${name}-wayland-none-hyprland".config.formats.iso;
+    "desktop-${name}-xorg-kde-kwin" = inputs.self.nixosConfigurations."desktop-${name}-xorg-kde-kwin".config.formats.iso;
   };
 }

@@ -3,9 +3,9 @@
   outputs,
 }: let
   specialExpected = {
-    "dashao-xorg-gnome-mutter" = "dashao";
-    "dashao-xorg-kde-kwin" = "dashao";
-    "dashao-wayland-none-hyprland" = "dashao";
+    "desktop-dashao-xorg-gnome-mutter" = "dashao";
+    "desktop-dashao-xorg-kde-kwin" = "dashao";
+    "desktop-dashao-wayland-none-hyprland" = "dashao";
   };
   specialHostNames = builtins.attrNames specialExpected;
 
