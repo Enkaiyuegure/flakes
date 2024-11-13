@@ -7,6 +7,8 @@
 
   # use path relative to the root of the project
   relativeToRoot = lib.path.append ../.;
+  relativeToModules = lib.path.append ../modules;
+  relativeToHome = lib.path.append ../home;
 
   scanPaths = path:
     builtins.map

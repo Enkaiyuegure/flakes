@@ -1,9 +1,10 @@
+{myLib, ...}:
 {
-  imports = [
-    ../base/core
-    ../base/tui
-    ../base/home.nix
+  imports = (map myLib.relativeToHome [
+    "base/core"
+    "base/tui"
+    "base/home.nix"
 
-    ./base
-  ];
+    "linux/base"
+  ]);
 }

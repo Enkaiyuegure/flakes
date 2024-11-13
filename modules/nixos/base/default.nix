@@ -1,3 +1,5 @@
 {myLib, ...}: {
-  imports = myLib.scanPaths ./.;
+  imports = (map myLib.relativeToModules [
+    "base"
+  ]) ++ (myLib.scanPaths ./.);
 }

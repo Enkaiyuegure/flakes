@@ -14,7 +14,7 @@
   base-modules = {
     nixos-modules = (map myLib.relativeToRoot [
       "hosts/system/${name}"
-      "modules/nixos/desktop.nix"
+      "modules/nixos/desktop"
       "modules/base/dae.nix"
       "hardening/nixpaks"
     ])
@@ -25,7 +25,7 @@
     ]);
     home-modules = (map myLib.relativeToRoot [
       "hosts/user/${name}"
-      "home/linux/gui.nix"
+      "home/linux/gui"
     ])
     ++ (with inputs; [
       plasma-manager.homeManagerModules.plasma-manager
