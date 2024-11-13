@@ -1,6 +1,6 @@
-{pkgs-stable, ...}: {
-  home.packages = with pkgs-stable; [
-    zotero
+{pkgs, lib, ...}: {
+  home.packages = with pkgs; [
+    (lib.hiPrio zotero)
     calibre
   ];
 }

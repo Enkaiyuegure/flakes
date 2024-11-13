@@ -42,12 +42,31 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    #========================================Hyprland=============================================#
+    #-----------an independent, highly customizable, dynamic tiling Wayland compositor------------# 
+    #-----------------------------that doesn't sacrifice on its looks-----------------------------#
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    #================================Official plugins for Hyprland================================#
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+    #===========================Workspace overview plugin for Hyprland============================#
+    hyprland-hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
     #=============================A customizable and extensible shell=============================#
     ags.url = "github:Aylur/ags";
     #=============================A material you color generation tool============================#
     matugen.url = "github:InioX/matugen?ref=v2.2.0";
     #==========JS/TS framework for creating Linux Desktops ontop of Wayland compositors===========#
     astal.url = "github:Aylur/astal";
+    #=========================A wayland native, highly customizable runner========================#
+    anyrun = {
+      url = "github:Kirottu/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     #=========================================myWallpapers========================================#
     wallpapers = {
       url = "github:Enkaiyuegure/wallpapers";
@@ -90,42 +109,33 @@
       url = "github:nix-community/haumea";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #=========================#Nix language server, based on nix libraries========================#
+    #==========================Nix language server, based on nix libraries========================#
     nixd.url = "github:nix-community/nixd";
     #===================================treefmt nix configuration=================================#
     treefmt-nix.url = "github:numtide/treefmt-nix";
+    #=================================Runtime sandboxing for Nix==================================#
+    nixpak = {
+      url = "github:nixpak/nixpak";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     #=================================Global registry of Nix flakes===============================#
     flake-registry = {
       url = "github:NixOS/flake-registry";
       flake = false;
     };
+    ##############################################NUR##############################################
     nur-ryan4yin.url = "github:ryan4yin/nur-packages";
-    # doom-emacs is a configuration framework for GNU Emacs.
+    ###########################################NonFlakes###########################################
+    #==========================================DoomEmacs==========================================#
+    #---------------------------a configuration framework for GNU Emacs---------------------------#
     doomemacs = {
       url = "github:doomemacs/doomemacs";
       flake = false;
     };
-    nixpak = {
-      url = "github:nixpak/nixpak";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # anyrun - a wayland launcher
-    anyrun = {
-      url = "github:Kirottu/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #========someSource needed for Enkaiyuegure's Operation System-Related configurations=========#
     someSource = {
       url = "github:Enkaiyuegure/someSource";
       flake = false;
-    };
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-    hyprland-hyprspace = {
-      url = "github:KZDKM/Hyprspace";
-      inputs.hyprland.follows = "hyprland";
     };
     #############################################end###############################################
   };
