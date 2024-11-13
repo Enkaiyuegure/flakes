@@ -34,6 +34,7 @@
     bfg-repo-cleaner # remove large files from git history
     k6 # load testing tool
     protobuf # protocol buffer compiler
+    devenv # Fast, Declarative, Reproducible, and Composable Developer Environments 
 
     # solve coding extercises - learn by doing
     exercism

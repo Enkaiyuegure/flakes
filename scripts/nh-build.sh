@@ -12,6 +12,7 @@ function traverseArray() {
 ################
 system_types=("desktop" "server")
 
+echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 echo "Please select the system type:"
 traverseArray "${system_types[@]}"
 read -p "Enter your choice(number):" system_choice
@@ -34,6 +35,7 @@ fi
 ############
 # hostname #
 ############
+echo "========================================"
 echo "Please select the hostname:"
 traverseArray "${hosts[@]}"
 read -p "Enter your choice(number):" host_choice
@@ -46,6 +48,7 @@ host_selected=${hosts[$((host_choice - 1))]}
 ###########
 # options #
 ###########
+echo "========================================"
 echo "Please select the ${options_name}:"
 traverseArray "${options[@]}"
 read -p "Enter your choice(number):" option_choice
@@ -74,6 +77,7 @@ fi
 ###########
 # details #
 ###########
+echo "========================================"
 echo "Please select the ${detailed_options_name}:"
 traverseArray "${detailed_options[@]}"
 read -p "Enter your choice(number):" detailed_choice
@@ -102,6 +106,7 @@ if [ "$system_selected" == "desktop" ]; then
         fi
     fi
 
+    echo "========================================"
     echo "Please select the window manager:"
     traverseArray "${wm_options[@]}"
     read -p "Enter your choice(number):" wm_choice
@@ -114,7 +119,7 @@ else
     wm_selected=""
 fi
 
-command="nh os switch -H $system_selected-$host_selected-$option_selected-$detailed_selected"
+command="nh os build -H $system_selected-$host_selected-$option_selected-$detailed_selected"
 if [ -n "$wm_selected" ]; then
     command="$command-$wm_selected"
 fi
@@ -122,6 +127,7 @@ fi
 echo "########################################"
 echo "$command"
 echo "########################################"
+echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 read -p "exec?(y/N)" whether_exec
 
 if [[ "$whether_exec" == "y" ]]; then
