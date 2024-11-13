@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 function traverseArray() {
     local array=("$@")
     for i in "${!array[@]}"; do
@@ -96,7 +98,7 @@ if [ "$system_selected" == "desktop" ]; then
         elif [[ "$detailed_selected" == "kde" ]]; then
             wm_options=("kwin")
         elif [[ "$detailed_selected" == "none" ]]; then
-            wm_options=("hyprland")
+            wm_options=("hyprland" "gamescope")
         fi
     fi
 

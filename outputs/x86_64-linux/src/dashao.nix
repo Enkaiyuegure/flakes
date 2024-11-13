@@ -51,23 +51,6 @@
       ++ base-modules.home-modules;
   };
 
-  modules-wayland-none-hyprland = {
-    nixos-modules = 
-      [
-        {
-          modules.nixos.desktop.wayland.enable = true;
-        }
-      ]
-      ++ base-modules.nixos-modules;
-    home-modules = 
-      [
-        {
-          home.linux.gui.hyprland.enable = true;
-        }
-      ]
-      ++ base-modules.home-modules;
-  };
-
   modules-xorg-kde-kwin = {
     nixos-modules = 
       [
@@ -86,18 +69,55 @@
       ++ base-modules.home-modules;
   };
 
+  modules-wayland-none-hyprland = {
+    nixos-modules = 
+      [
+        {
+          modules.nixos.desktop.wayland.enable = true;
+        }
+      ]
+      ++ base-modules.nixos-modules;
+    home-modules = 
+      [
+        {
+          home.linux.gui.hyprland.enable = true;
+        }
+      ]
+      ++ base-modules.home-modules;
+  };
+
+  modules-wayland-none-gamescope = {
+    nixos-modules = 
+      [
+        {
+          modules.nixos.desktop.wayland.enable = true;
+          modules.nixos.desktop.wm.gamescope.enable = true;
+        }
+      ]
+      ++ base-modules.nixos-modules;
+    home-modules = 
+      [
+        {
+          home.linux.gui.hyprland.enable = true;
+        }
+      ]
+      ++ base-modules.home-modules;
+  };
+
 in {
   nixosConfigurations = {
     # host with hyprland compositor
     "desktop-${name}-xorg-gnome-mutter" = myLib.nixosSystem (modules-xorg-gnome-mutter // args);
-    "desktop-${name}-wayland-none-hyprland" = myLib.nixosSystem (modules-wayland-none-hyprland // args);
     "desktop-${name}-xorg-kde-kwin" = myLib.nixosSystem (modules-xorg-kde-kwin // args);
+    "desktop-${name}-wayland-none-hyprland" = myLib.nixosSystem (modules-wayland-none-hyprland // args);
+    "desktop-${name}-wayland-none-gamescope" = myLib.nixosSystem (modules-wayland-none-gamescope // args);
   };
 
   # generate iso image for hosts with desktop environment
   packages = {
     "desktop-${name}-xorg-gnome-mutter" = inputs.self.nixosConfigurations."desktop-${name}-xorg-gnome-mutter".config.formats.iso;
-    "desktop-${name}-wayland-none-hyprland" = inputs.self.nixosConfigurations."desktop-${name}-wayland-none-hyprland".config.formats.iso;
     "desktop-${name}-xorg-kde-kwin" = inputs.self.nixosConfigurations."desktop-${name}-xorg-kde-kwin".config.formats.iso;
+    "desktop-${name}-wayland-none-hyprland" = inputs.self.nixosConfigurations."desktop-${name}-wayland-none-hyprland".config.formats.iso;
+    "desktop-${name}-wayland-none-gamescope" = inputs.self.nixosConfigurations."desktop-${name}-wayland-none-gamescope".config.formats.iso;
   };
 }

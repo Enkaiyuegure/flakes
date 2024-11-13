@@ -6,6 +6,7 @@
     "desktop-dashao-xorg-gnome-mutter" = "dashao";
     "desktop-dashao-xorg-kde-kwin" = "dashao";
     "desktop-dashao-wayland-none-hyprland" = "dashao";
+    "desktop-dashao-wayland-none-gamescope" = "dashao";
   };
   specialHostNames = builtins.attrNames specialExpected;
 
