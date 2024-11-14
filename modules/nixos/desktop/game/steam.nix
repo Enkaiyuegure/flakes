@@ -54,4 +54,6 @@
   fonts.packages = with pkgs; [
     wqy_zenhei # Need by steam for Chinese
   ];
+
+  hardware.xone.enable = true;
 }

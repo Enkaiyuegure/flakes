@@ -13,7 +13,6 @@
       capSysNice = true;
     };
 
-    hardware.xone.enable = true;
     services.getty.autologinUser = "enkai";
 
     environment.systemPackages = with pkgs; [
