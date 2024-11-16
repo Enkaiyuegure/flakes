@@ -37,6 +37,13 @@ The basic framework is derived from [`ryan4yin/nix-config`](https://github.com/r
 
 ## TODO
 - Docs: Add explanatory documents for each important directory
+- Hosts:
+  - Perhaps add more
+  - Improve the management of system configuration
+- Secrets:
+  - Find an encryption solution for privacy information
+  - Add a password store
+  - Maybe a hardware key will better?
 - Desktop Environment:
   - Gnome:
     - Refine the configuration declaratively using `dconf`
@@ -62,8 +69,15 @@ The basic framework is derived from [`ryan4yin/nix-config`](https://github.com/r
 - Terminal Multiplexer:
   - tmux:
     - Refine the related settings
+- Shell:
+  - nushell:
+    - Learn and configure further
+  - fish:
+    - same as above
 - Status Bar:
   - Replace waybar with ags
+- Input method:                                         |
+  - Maybe I should try the double pinyin input method?
 - **WIP**
     
 [Gnome]: https://github.com/GNOME
