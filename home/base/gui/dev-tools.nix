@@ -3,8 +3,14 @@
     mitmproxy # http/https proxy tool
     insomnia # REST client
     wireshark # network analyzer
-
-    # IDEs
-    # jetbrains.idea-ultimate
-  ];
+  ] ++ (with pkgs.jetbrains; [
+      # IDEs
+      idea-ultimate
+      clion
+      rust-rover
+      goland
+      pycharm-professional
+      webstorm
+      phpstorm
+  ]);
 }
