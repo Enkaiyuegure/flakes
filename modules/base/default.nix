@@ -1,4 +1,5 @@
 {
+  emacs-overlay,
   pkgs,
   myVars,
   nuenv,
@@ -9,6 +10,7 @@
   nixpkgs.overlays =
     [
       nuenv.overlays.default
+      (import emacs-overlay)
     ];
 
   # auto upgrade nix to the unstable version
