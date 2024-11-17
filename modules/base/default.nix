@@ -1,8 +1,10 @@
 {
-  emacs-overlay,
   pkgs,
   myVars,
   nuenv,
+  emacs-overlay,
+  kickstart-nix-nvim,
+  neovim-nightly-overlay,
   nixpkgs,
   lib,
   ...
@@ -10,7 +12,10 @@
   nixpkgs.overlays =
     [
       nuenv.overlays.default
-      (import emacs-overlay)
+      #(import emacs-overlay)
+      emacs-overlay.overlays.default
+      kickstart-nix-nvim.overlays.default
+      neovim-nightly-overlay.overlays.default
     ];
 
   # auto upgrade nix to the unstable version

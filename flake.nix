@@ -129,7 +129,7 @@
     #==========================================DoomEmacs==========================================#
     #---------------------------a configuration framework for GNU Emacs---------------------------#
     doomemacs = {
-      url = "github:doomemacs/doomemacs";
+      url = "github:Enkaiyuegure/doomemacs";
       flake = false;
     };
     #========someSource needed for Enkaiyuegure's Operation System-Related configurations=========#
@@ -141,6 +141,12 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    kickstart-nix-nvim.url = "github:nix-community/kickstart-nix.nvim";
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nvimdots.url = "github:Enkaiyuegure/nvimdots";
     #############################################end###############################################
   };
 
