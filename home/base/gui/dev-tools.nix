@@ -3,6 +3,8 @@
     mitmproxy # http/https proxy tool
     insomnia # REST client
     wireshark # network analyzer
+
+    octaveFull # MATLAB liked Scientific Programming Language
   ] ++ (with pkgs.jetbrains; [
       # IDEs
       idea-ultimate
