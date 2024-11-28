@@ -116,18 +116,12 @@
     #=============================A customizable and extensible shell=============================#
     ags = {
       url = "github:Aylur/ags";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        astal.follows = "astal";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     #=============================A material you color generation tool============================#
     matugen = {
       url = "github:InioX/matugen?ref=v2.2.0";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     #==========JS/TS framework for creating Linux Desktops ontop of Wayland compositors===========#
     astal = {

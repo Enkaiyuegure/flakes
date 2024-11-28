@@ -7,5 +7,7 @@
 
   environment.systemPackages = with pkgs; [
     wl-clipboard
+
+    texlive.combined.scheme-full
   ];
 }
