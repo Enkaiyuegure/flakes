@@ -29,7 +29,7 @@
   #
   #  See also https://grahamc.com/blog/erase-your-darlings/
 
-  # NOTE: impermanence only mounts the directory/file list below to /persistent
+  # NOTE: impermanence only mounts the directory/file list below to /persist
   # If the directory/file already exists in the root filesystem, you should
   # move those files/directories to /persistent first!
   environment.persistence."/persist" = {
@@ -54,90 +54,5 @@
       #"/etc/machine-id"
       "/etc/create-ap.conf"
     ];
-
-    # the following directories will be passed to /persistent/home/$USER
-    users.${myVars.username} = {
-      directories = [
-        "Codes"
-        "Projects"
-        "Flakes"
-        "tmp"
-
-        "Downloads"
-        "Music"
-        "Pictures"
-        "Documents"
-        "Videos"
-
-        {
-          directory = ".gnupg";
-          mode = "0700";
-        }
-        {
-          directory = ".ssh";
-          mode = "0700";
-        }
-
-        # misc
-        ".config/pulse"
-        ".pki"
-        ".steam" # steam games
-        
-
-        # cloud native
-        {
-          # pulumi - infrastructure as code
-          directory = ".pulumi";
-          mode = "0700";
-        }
-        {
-          directory = ".aws";
-          mode = "0700";
-        }
-        {
-          directory = ".docker";
-          mode = "0700";
-        }
-        {
-          directory = ".kube";
-          mode = "0700";
-        }
-
-        # remote desktop
-        ".config/remmina"
-        ".config/freerdp"
-
-        # doom-emacs
-        # ".config/emacs"
-        "org" #  org files
-
-        # vscode
-        ".vscode"
-        ".vscode-insiders"
-        ".config/Code/User"
-        ".config/Code - Insiders/User"
-
-        # browsers
-        ".mozilla"
-        ".config/google-chrome"
-
-        # neovim / remmina / flatpak / ...
-        ".local/share"
-        ".local/state"
-
-        # neovim plugins(wakatime & copilot)
-        ".wakatime"
-        ".config/github-copilot"
-
-        "Notes"
-        "Zotero"
-        "Calibre Library"
-        "KiCad"
-      ];
-      files = [
-        ".wakatime.cfg"
-        ".config/nushell/history.txt"
-      ];
-    };
   };
 }
