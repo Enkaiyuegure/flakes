@@ -5,7 +5,7 @@
     enableDefaultPackages = false;
     fontDir.enable = true;
 
-    packages = with pkgs; [
+    packages = (with pkgs; [
       # icon fonts
       material-design-icons
       font-awesome
@@ -24,21 +24,22 @@
       source-han-sans # 思源黑体
       source-han-serif # 思源宋体
 
-      # nerdfonts
-      # https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/data/fonts/nerdfonts/shas.nix
-      (nerdfonts.override {
-        fonts = [
-          # symbols icon only
-          "NerdFontsSymbolsOnly"
-          # Characters
-          "FiraCode"
-          "JetBrainsMono"
-          "Iosevka"
-        ];
-      })
       julia-mono
       dejavu_fonts
-    ];
+    ]) ++ # nerdfonts
+      # https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/data/fonts/nerdfonts/shas.nix
+      (with pkgs.nerd-fonts; [
+          # symbols icon only
+          # NerdFontsSymbolsOnly
+          symbols-only
+          # Characters
+          #FiraCode
+          fira-code
+          #JetBrainsMono
+          jetbrains-mono
+          #Iosevka
+          iosevka
+    ]);
 
     # user defined fonts
     # the reason there's Noto Color Emoji everywhere is to override DejaVu's

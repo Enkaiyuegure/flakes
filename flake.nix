@@ -160,12 +160,6 @@
         flake-utils.follows = "flake-utils";
         rust-overlay.follows = "rust-overlay";
         crane.follows = "crane";
-        agenix.inputs = {
-          darwin.follows = "darwin";
-          home-manager.follows = "home-manager";
-          nixpkgs.follows = "nixpkgs";
-          systems.follows = "systems";
-        };
       };
     };
     #=====================Atomic secret provisioning for NixOS based on sops======================#

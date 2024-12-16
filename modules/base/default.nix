@@ -92,6 +92,7 @@
       "https://anyrun.cachix.org"
       "https://hyprland.cachix.org"
       "https://pre-commit-hooks.cachix.org"
+      "https://cache.lix.systems"
     ];
 
     trusted-public-keys = [
@@ -100,6 +101,7 @@
       "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "pre-commit-hooks.cachix.org-1:Pkk3Panw5AW24TOv6kz3PvLhlH8puAsJTBbOPmBo7Rc="
+      "cache.lix.systems:aBnZUw8zA7H35Cz2RyKFVs3H4PlGTLawyY5KRbvJR8o="
     ];
     builders-use-substitutes = true;
   };
