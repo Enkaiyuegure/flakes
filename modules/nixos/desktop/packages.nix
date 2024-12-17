@@ -9,5 +9,11 @@
     wl-clipboard
 
     texlive.combined.scheme-full
+
+    (inkscape-with-extensions.override {
+      inkscapeExtensions = with inkscape-extensions; [
+        textext
+      ]; 
+    })
   ];
 }
