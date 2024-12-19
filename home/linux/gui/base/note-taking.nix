@@ -6,5 +6,6 @@
     })
     obsidian-export
     zotero
+    anytype
   ];
 }
