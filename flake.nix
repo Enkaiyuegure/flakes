@@ -325,5 +325,21 @@
     };
   };
 
+  nixConfig = {
+    trusted-users = [ "root" "@wheel" ];
+    extra-substituters = [
+      "https://ryan4yin.cachix.org"
+      "https://anyrun.cachix.org"
+      "https://hyprland.cachix.org"
+      "https://cache.lix.systems"
+    ];
+    extra-trusted-public-keys = [
+      "ryan4yin.cachix.org-1:Gbk27ZU5AYpGS9i3ssoLlwdvMIh0NxG0w8it/cv9kbU="
+      "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "cache.lix.systems:aBnZUw8zA7H35Cz2RyKFVs3H4PlGTLawyY5KRbvJR8o="
+    ];
+  };
+
   outputs = inputs: import ./outputs inputs;
 }
