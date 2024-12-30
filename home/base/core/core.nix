@@ -10,6 +10,8 @@
     gnupg
     gnumake
 
+    cheat # Create and view interactive cheatsheets on the command-line
+
     # Modern cli tools, replacement of grep/sed/...
 
     # Interactively filter its input using fuzzy searching, not limit to filenames.
