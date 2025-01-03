@@ -15,6 +15,11 @@
       iface = "enp2s0";
       ipv4 = "10.10.50.1";
     };
+    bayi = {
+      # WorkStation
+      iface = "eno1";
+      ipv4 = "10.10.200.1";
+    };
   };
 
   hostsInterface =

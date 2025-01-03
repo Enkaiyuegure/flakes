@@ -81,7 +81,10 @@
     home-modules = 
       [
         {
-          home.linux.gui.hyprland.enable = true;
+          home.linux.gui.hyprland = {
+            enable = true;
+            nvidia = true;
+          };
           home.base.tui.editors.emacs.enable = true; 
         }
       ]
