@@ -1,7 +1,7 @@
 # Hosts
 
-1. `dashao`: 
-  - Which means "大韶", a significant piece of ritual music from the ancient Zhou Dynasty in China.
+1. `wu`: 
+  - Which means "大武", a significant piece of ritual music from the ancient Zhou Dynasty in China.
   - My main desktop, R7 7840hs, 64GiB, 2TiB(raid1)
   - HP Zbook Power 15.6 inch G10 A
 

@@ -10,7 +10,7 @@
   genSpecialArgs,
   ...
 } @ args: let
-  name = "dashao";
+  name = "wu";
   base-modules = {
     nixos-modules = (map myLib.relativeToRoot [
       "hosts/system/${name}"

@@ -23,7 +23,7 @@ fi
 system_selected=${system_types[$((system_choice - 1))]}
 
 if [ "${system_selected}" == "desktop" ]; then
-    hosts=("dashao")
+    hosts=("wu")
     options=("xorg" "wayland")
     options_name="graphics protocol"
 elif [ "${system_selected}" == "server" ]; then

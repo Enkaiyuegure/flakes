@@ -10,7 +10,7 @@
   prefixLength = 16;
 
   hostsAddr = {
-    dashao = {
+    wu = {
       # Desktop PC
       iface = "enp2s0";
       ipv4 = "10.10.50.1";
@@ -43,7 +43,7 @@
     # define the host alias for remote builders
     # this config will be written to /etc/ssh/ssh_config
     # ''
-    #   Host dashao
+    #   Host wu
     #     HostName 10.10.50.1
     #     Port 22
     #   ...
@@ -75,7 +75,7 @@
         publicKey = value.publicKey;
       })
       {
-        dashao.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGZioxb4HXvqW8YgYo/s6jl9ym78tOCkvSHAp5brDEi1 enkai@dashao";
+        wu.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGZioxb4HXvqW8YgYo/s6jl9ym78tOCkvSHAp5brDEi1 enkai@wu";
       };
   };
 }

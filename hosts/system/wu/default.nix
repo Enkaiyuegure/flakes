@@ -1,6 +1,6 @@
 { myVars, myLib, ...}:
 let
-  hostName = "dashao"; # Define your hostname.
+  hostName = "wu"; # Define your hostname.
 in {
   imports = myLib.scanPaths ./.;
 
