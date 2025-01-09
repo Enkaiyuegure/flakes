@@ -64,12 +64,12 @@
         settings = {
           fallbackToPassword = true;
           allowDiscards = true;
-          keyFile = "/dev/disk/by-id/usb-USB_SanDisk_3.2Gen1_01011b8acbfd37a92b47e06b638fed6702991290685c88ebe94a14e11239f8fd5a0b000000000000000000007f5d6d2d00001c0083558107c52e20c3-0\:0";
-          keyFileSize = 256;
+          # keyFile = "/dev/disk/by-id/usb-USB_SanDisk_3.2Gen1_01011b8acbfd37a92b47e06b638fed6702991290685c88ebe94a14e11239f8fd5a0b000000000000000000007f5d6d2d00001c0083558107c52e20c3-0\:0";
+          # keyFileSize = 256;
         };
 	passwordFile = "/tmp/secret.key";
         #additionalKeyFiles = [
-        #  "/dev/disk/by-uuid/076cadd8-df27-4431-8f9f-a59590e4c471"
+          # "/dev/disk/by-uuid/076cadd8-df27-4431-8f9f-a59590e4c471"
         #];
         extraFormatArgs = [
           "--type luks2"
@@ -84,13 +84,13 @@
           type = "btrfs";
           extraArgs = [ "-f" ];
           subvolumes = {
-            "/home" = {
-              mountOptions = [ "compress=zstd" ];
-              mountpoint = "/home";
-            };
             "/nix" = {
               mountOptions = [ "compress=zstd" "noatime" ];
               mountpoint = "/nix";
+            };
+            "/@home" = {
+              mountOptions = [ "compress=zstd" ];
+              mountpoint = "/home";
             };
             "/@persist" = {
               mountOptions = [ "compress=zstd" ];
