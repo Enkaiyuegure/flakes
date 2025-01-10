@@ -33,6 +33,8 @@
     zstd
     unzipNLS
     p7zip
+	rar
+	unrar
 
     # Text Processing
     # Docs: https://github.com/learnbyexample/Command-line-text-processing
