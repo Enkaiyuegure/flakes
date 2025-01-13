@@ -23,6 +23,7 @@
     glxinfo
     go-musicfox
     yesplaymusic
+    spotify
   ];
 
   # https://github.com/catppuccin/cava
