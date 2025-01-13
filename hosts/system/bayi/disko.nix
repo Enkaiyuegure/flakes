@@ -57,7 +57,7 @@
     };
     nix = {
       type = "mdadm";
-      level = 1;
+      level = 0;
       content = {
         type = "luks";
         name = "crypted";
