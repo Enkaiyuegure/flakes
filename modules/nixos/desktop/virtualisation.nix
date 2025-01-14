@@ -43,10 +43,14 @@
       enable = true;
     #   # hanging this option to false may cause file permission issues for existing guests.
     #   # To fix these, manually change ownership of affected files in /var/lib/libvirt/qemu to qemu-libvirtd.
-      qemu.runAsRoot = true;
+      qemu = {
+        runAsRoot = true;
+        swtpm.enable = true;
+        ovmf.packages = [ pkgs.OVMFFull.fd ];
+      };
     };
 
-	spiceUSBRedirection.enable = true;
+    spiceUSBRedirection.enable = true;
 
     # lxd.enable = true;
   };
