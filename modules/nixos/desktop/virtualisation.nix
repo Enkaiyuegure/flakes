@@ -58,6 +58,7 @@
   programs.virt-manager.enable = true;
 
   environment.systemPackages = with pkgs; [
+    virtiofsd
     # This script is used to install the arm translation layer for waydroid
     # so that we can install arm apks on x86_64 waydroid
     #
