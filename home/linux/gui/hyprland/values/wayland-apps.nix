@@ -87,7 +87,7 @@
           # Use VSCode Insiders to fix crash: https://github.com/NixOS/nixpkgs/issues/246509
           src = builtins.fetchTarball {
             url = "https://update.code.visualstudio.com/latest/linux-x64/insider";
-            sha256 = "07rfyw9y8g6rwyg5ivzikvnks73chn307xrajbscbd5hrrxz07fj";
+            sha256 = "1rcphmvsrmgz9dywgp7bqi5c3xlz5sj8zz3bmndfgf3a4dz388x7";
           };
           version = "latest";
         });
