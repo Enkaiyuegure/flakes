@@ -13,7 +13,7 @@ in
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.kernelParams = [ "intel_iommu=pt" ];
+  boot.kernelParams = [ "intel_iommu=on" "intel_iommu=pt" "kvm.ignore_msrs=1" ];
   boot.extraModulePackages = [ ];
   boot.extraModprobeConfig = "options kvm_intel nested=1";
 

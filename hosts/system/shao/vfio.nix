@@ -17,5 +17,6 @@ in
     boot.kernelParams = [ 
       ("vfio-pci.ids=" + lib.concatStringsSep "," gpuIDs) # vfio-pci
     ];
+    boot.extraModprobeConfig = "options vfio-pci ids=${builtins.concatStringsSep "," gpuIDs}";
   };
 }
