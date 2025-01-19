@@ -20,6 +20,9 @@
     # misc
     flameshot
     ventoy # multi-boot usb creator
+    
+    # This program allows you read and control device brightness
+    brightnessctl
 
     # my custom hardened packages
     pkgs.nixpaks.qq
