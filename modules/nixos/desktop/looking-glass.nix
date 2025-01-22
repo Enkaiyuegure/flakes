@@ -6,7 +6,7 @@ in
   # Add a file for looking-glass to use later. This will allow for viewing the guest VM's screen in a
   # performant way.
   systemd.tmpfiles.rules = [
-    "f /dev/shm/looking-glass 0660 ${username} qemu-libvirtd -"
+    "f /dev/shm/looking-glass 0660 ${username} kvm -"
   ];
 
   # Add virt-manager and looking-glass to use later.
