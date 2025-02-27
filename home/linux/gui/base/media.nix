@@ -22,7 +22,6 @@
     vulkan-tools
     glxinfo
     go-musicfox
-    yesplaymusic
     spotify
   ];
 

@@ -47,4 +47,10 @@
 
   # replace default editor with vim
   environment.variables.EDITOR = "nvim";
+
+  nixpkgs.config = {
+    programs.npm.npmrc = ''
+      prefix = ''${HOME}/.npm-global
+    '';
+  };
 }

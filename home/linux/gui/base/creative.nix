@@ -39,10 +39,10 @@
         wlrobs
         # obs-ndi
         obs-vaapi
-        obs-nvfbc
+        # obs-nvfbc
         obs-teleport
         # obs-hyperion
-        droidcam-obs
+        # droidcam-obs
         obs-vkcapture
         obs-gstreamer
         obs-3d-effect

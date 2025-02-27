@@ -18,4 +18,8 @@
     "ntp.aliyun.com" # Aliyun NTP Server
     "ntp.tencent.com" # Tencent NTP Server
   ];
+
+  services.zerotierone = {
+    enable = true;
+  };
 }
