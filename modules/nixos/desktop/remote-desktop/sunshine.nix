@@ -53,6 +53,13 @@
   #   };
   # };
 
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
+
   networking.firewall = {
     allowedTCPPortRanges = [
       {
@@ -64,6 +71,10 @@
       {
         from = 47998;
         to = 48010;
+      }
+      {
+        from = 8000;
+        to = 8010;
       }
     ];
   };
