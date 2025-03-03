@@ -127,6 +127,7 @@
     ]
     #-*- Web Development -*-#
     ++ [
+      deno
       nodePackages.nodejs
       nodePackages.typescript
       nodePackages.typescript-language-server
