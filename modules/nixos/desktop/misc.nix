@@ -43,6 +43,8 @@
     # dconf is a low-level configuration system.
     dconf.enable = true;
 
+    wireshark.enable = true; # network analyzer
+
     # thunar file manager(part of xfce) related options
     thunar = {
       enable = true;
