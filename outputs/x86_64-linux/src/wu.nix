@@ -29,7 +29,6 @@
     ])
     ++ (with inputs; [
       plasma-manager.homeManagerModules.plasma-manager
-      nvimdots.homeManagerModules.nvimdots
     ]);
   };
 
@@ -82,7 +81,6 @@
       [
         {
           home.linux.gui.hyprland.enable = true;
-          home.base.tui.editors.emacs.enable = true; 
         }
       ]
       ++ base-modules.home-modules;
