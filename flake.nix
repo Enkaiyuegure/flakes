@@ -276,13 +276,7 @@
     ##############################################NUR##############################################
     nur-ryan4yin.url = "github:ryan4yin/nur-packages";
     ###########################################NonFlakes###########################################
-    #==========================================DoomEmacs==========================================#
-    #---------------------------a configuration framework for GNU Emacs---------------------------#
-    doomemacs = {
-      url = "github:Enkaiyuegure/doomemacs";
-      flake = false;
-    };
-    #========someSource needed for Enkaiyuegure's Operation System-Related configurations=========#
+     #========someSource needed for Enkaiyuegure's Operation System-Related configurations=========#
     someSource = {
       url = "github:Enkaiyuegure/someSource";
       flake = false;
@@ -300,27 +294,15 @@
         nixpkgs-stable.follows = "nixpkgs-stable";
       };
     };
-    kickstart-nix-nvim = {
-      url = "github:nix-community/kickstart-nix.nvim";
+    neovim = {
+      url = "github:Enkaiyuegure/neovim";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+    emacs = {
+      url = "github:Enkaiyuegure/emacs";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
+        emacs-overlay.follows = "emacs-overlay";
         flake-utils.follows = "flake-utils";
-      };
-    };
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-        git-hooks.follows = "pre-commit-hooks";
-      };
-    };
-    nvimdots = {
-      url = "github:Enkaiyuegure/nvimdots";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
       };
     };
   };
