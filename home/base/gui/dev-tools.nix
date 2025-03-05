@@ -5,6 +5,8 @@
     wireshark # network analyzer
 
     octaveFull # MATLAB liked Scientific Programming Language
+
+    code-cursor # AI-powered code editor built on vscode
   ] ++ (with pkgs.jetbrains; [
       # IDEs
       idea-ultimate
