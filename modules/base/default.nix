@@ -3,8 +3,8 @@
   myVars,
   nuenv,
   emacs-overlay,
-  kickstart-nix-nvim,
-  neovim-nightly-overlay,
+  neovim,
+  emacs,
   nixpkgs,
   lib,
   ...
@@ -12,10 +12,9 @@
   nixpkgs.overlays =
     [
       nuenv.overlays.default
-      #(import emacs-overlay)
       emacs-overlay.overlays.default
-      kickstart-nix-nvim.overlays.default
-      neovim-nightly-overlay.overlays.default
+      neovim.overlays.default
+      emacs.overlays.default
     ];
 
   # auto upgrade nix to the unstable version
@@ -85,8 +84,6 @@
       # status: https://mirrors.ustc.edu.cn/status/
       "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-      # status: https://mirror.sjtu.edu.cn/
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
 
       "https://nix-community.cachix.org"
       "https://pre-commit-hooks.cachix.org"
