@@ -2,7 +2,7 @@
   pkgs,
   pkgs-unstable,
   pkgs-stable,
-  nur-ryan4yin,
+  nur-enkaiyuegure,
   ...
 }: {
   home.packages = with pkgs; [
@@ -20,7 +20,10 @@
     aseprite # Animated sprite editor & pixel art tool
 
     # this app consumes a lot of storage, so do not install it currently
-    kicad     # 3d printing, eletrical engineering
+    kicad # 3d printing, eletrical engineering
+
+    # risc-v
+    nur-enkaiyuegure.packages.${pkgs.system}.rars
 
     # fpga
     pkgs-unstable.python312Packages.apycula # gowin fpga
