@@ -207,7 +207,7 @@
     },
     "crane_3": {
       "inputs": {
-        "nixpkgs": "nixpkgs_8"
+        "nixpkgs": "nixpkgs_9"
       },
       "locked": {
         "lastModified": 1717383740,
@@ -1601,6 +1601,22 @@
     },
     "nixpkgs_7": {
       "locked": {
+        "lastModified": 1712449641,
+        "narHash": "sha256-U9DDWMexN6o5Td2DznEgguh8TRIUnIl9levmit43GcI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "600b15aea1b36eeb43833a50b0e96579147099ff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_8": {
+      "locked": {
         "lastModified": 1702921762,
         "narHash": "sha256-O/rP7gulApQAB47u6szEd8Pn8Biw0d84j5iuP2tcxzY=",
         "owner": "NixOS",
@@ -1615,7 +1631,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_8": {
+    "nixpkgs_9": {
       "locked": {
         "lastModified": 1714656196,
         "narHash": "sha256-kjQkA98lMcsom6Gbhw8SYzmwrSo+2nruiTcTZp5jK7o=",
@@ -1710,9 +1726,27 @@
         "type": "github"
       }
     },
-    "nur-ryan4yin": {
+    "nur-enkaiyuegure": {
       "inputs": {
         "nixpkgs": "nixpkgs_7"
+      },
+      "locked": {
+        "lastModified": 1741494610,
+        "narHash": "sha256-I+h6viXF82FoyA5ZTFUG42R9gjU6KxBJXbhWCmNPpkk=",
+        "owner": "Enkaiyuegure",
+        "repo": "nur-packages",
+        "rev": "09ebf3a7204065bd9c52d0d37c82640ca42533b5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Enkaiyuegure",
+        "repo": "nur-packages",
+        "type": "github"
+      }
+    },
+    "nur-ryan4yin": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_8"
       },
       "locked": {
         "lastModified": 1728350869,
@@ -1849,6 +1883,7 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nuenv": "nuenv",
         "nur": "nur",
+        "nur-enkaiyuegure": "nur-enkaiyuegure",
         "nur-ryan4yin": "nur-ryan4yin",
         "plasma-manager": "plasma-manager",
         "pre-commit-hooks": "pre-commit-hooks",

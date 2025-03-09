@@ -86,7 +86,7 @@
       };
     };
     #========================================Hyprland=============================================#
-    #-----------an independent, highly customizable, dynamic tiling Wayland compositor------------# 
+    #-----------an independent, highly customizable, dynamic tiling Wayland compositor------------#
     #-----------------------------that doesn't sacrifice on its looks-----------------------------#
     hyprland = {
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
@@ -254,7 +254,7 @@
       };
     };
     #==================================Evaluate and build in parallel==============================#
-    #------------------Combine the power of nix-eval-jobs with nix-output-monitor------------------# 
+    #------------------Combine the power of nix-eval-jobs with nix-output-monitor------------------#
     #-----------------------to speed-up your evaluation and building process-----------------------#
     nix-fast-build = {
       url = "github:Mic92/nix-fast-build";
@@ -275,8 +275,9 @@
     };
     ##############################################NUR##############################################
     nur-ryan4yin.url = "github:ryan4yin/nur-packages";
+    nur-enkaiyuegure.url = "github:Enkaiyuegure/nur-packages";
     ###########################################NonFlakes###########################################
-     #========someSource needed for Enkaiyuegure's Operation System-Related configurations=========#
+    #========someSource needed for Enkaiyuegure's Operation System-Related configurations=========#
     someSource = {
       url = "github:Enkaiyuegure/someSource";
       flake = false;
@@ -308,7 +309,7 @@
   };
 
   nixConfig = {
-    trusted-users = [ "root" "@wheel" ];
+    trusted-users = ["root" "@wheel"];
     extra-substituters = [
       "https://ryan4yin.cachix.org"
       "https://anyrun.cachix.org"
