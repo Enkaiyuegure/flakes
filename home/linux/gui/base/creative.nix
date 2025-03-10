@@ -2,7 +2,6 @@
   pkgs,
   pkgs-unstable,
   pkgs-stable,
-  nur-enkaiyuegure,
   ...
 }: {
   home.packages = with pkgs; [
@@ -23,7 +22,7 @@
     kicad # 3d printing, eletrical engineering
 
     # risc-v
-    nur-enkaiyuegure.packages.${pkgs.system}.rars
+    rars
 
     # fpga
     pkgs-unstable.python312Packages.apycula # gowin fpga
@@ -31,6 +30,7 @@
     pkgs-unstable.nextpnr # fpga place and route
     pkgs-unstable.openfpgaloader # fpga programming
     # nur-ryan4yin.packages.${pkgs.system}.gowin-eda-edu-ide # app: `gowin-env` => `gw_ide` / `gw_pack` / ...
+    vivado-2020_1
   ];
 
   programs = {

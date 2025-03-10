@@ -26,5 +26,8 @@ in rec {
 
     # enable scrolling in git diff
     DELTA_PAGER = "less -R";
+
+    # font size fix
+    GDK_SCALE = "1.5";
   };
 }

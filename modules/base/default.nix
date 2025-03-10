@@ -7,15 +7,16 @@
   emacs,
   nixpkgs,
   lib,
+  nur-enkaiyuegure,
   ...
 } @ args: {
-  nixpkgs.overlays =
-    [
-      nuenv.overlays.default
-      emacs-overlay.overlays.default
-      neovim.overlays.default
-      emacs.overlays.default
-    ];
+  nixpkgs.overlays = [
+    nuenv.overlays.default
+    emacs-overlay.overlays.default
+    neovim.overlays.default
+    emacs.overlays.default
+    nur-enkaiyuegure.overlays.default
+  ];
 
   # auto upgrade nix to the unstable version
   # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/package-management/nix/default.nix#L284
@@ -71,12 +72,12 @@
 
   nix.settings = {
     # enable flakes globally
-    experimental-features = [ "nix-command" "flakes" "auto-allocate-uids" "cgroups" ];
+    experimental-features = ["nix-command" "flakes" "auto-allocate-uids" "cgroups"];
 
     # given the users in this list the right to specify additional substituters via:
     #    1. `nixConfig.substituers` in `flake.nix`
     #    2. command line args `--options substituers http://xxx`
-    trusted-users = [ "root" "@wheel" ];
+    trusted-users = ["root" "@wheel"];
 
     # substituers that will be considered before the official ones(https://cache.nixos.org)
     substituters = [
@@ -103,7 +104,7 @@
 
   # make `nix repl '<nixpkgs>'` use the same nixpkgs as the one used by this flake.
   # discard all the default paths, and only use the one from this flake.
-  nix.nixPath = lib.mkForce [ "nixpkgs=${nixpkgs}" ];
+  nix.nixPath = lib.mkForce ["nixpkgs=${nixpkgs}"];
 
   # https://github.com/NixOS/nix/issues/9574
   nix.settings.nix-path = lib.mkForce "nixpkgs=flake:nixpkgs";

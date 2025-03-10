@@ -1731,11 +1731,11 @@
         "nixpkgs": "nixpkgs_7"
       },
       "locked": {
-        "lastModified": 1741494610,
-        "narHash": "sha256-I+h6viXF82FoyA5ZTFUG42R9gjU6KxBJXbhWCmNPpkk=",
+        "lastModified": 1741585452,
+        "narHash": "sha256-/NzBKBRF2VTir8e3oC0a1orswxOfon0AYG5aR7QV1ms=",
         "owner": "Enkaiyuegure",
         "repo": "nur-packages",
-        "rev": "09ebf3a7204065bd9c52d0d37c82640ca42533b5",
+        "rev": "cc668bf690ca2ee4a0cfb94c50a47f7b5b8d4f76",
         "type": "github"
       },
       "original": {
