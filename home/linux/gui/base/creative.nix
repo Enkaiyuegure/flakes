@@ -38,6 +38,12 @@ in {
     # risc-v
     rars
 
+    # matlab
+    matlab
+    matlab-shell
+    matlab-mlint
+    matlab-mex
+
     # fpga
     pkgs-unstable.python312Packages.apycula # gowin fpga
     pkgs-unstable.yosys # fpga synthesis

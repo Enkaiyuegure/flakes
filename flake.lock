@@ -1268,6 +1268,29 @@
         "type": "github"
       }
     },
+    "nix-matlab": {
+      "inputs": {
+        "flake-compat": [
+          "flake-compat"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1741619110,
+        "narHash": "sha256-8FvObTyK7ULSZxDj6X85k9mzHIl7UbghGKo2BV63WkA=",
+        "owner": "doronbehar",
+        "repo": "nix-matlab",
+        "rev": "0f2b703e64443973deaa052e735b2ec24b836e02",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "doronbehar",
+        "repo": "nix-matlab",
+        "type": "gitlab"
+      }
+    },
     "nix-on-droid": {
       "inputs": {
         "home-manager": [
@@ -1872,6 +1895,7 @@
         "nix-fast-build": "nix-fast-build",
         "nix-gaming": "nix-gaming",
         "nix-index-database": "nix-index-database",
+        "nix-matlab": "nix-matlab",
         "nix-on-droid": "nix-on-droid",
         "nixd": "nixd",
         "nixlib": "nixlib",

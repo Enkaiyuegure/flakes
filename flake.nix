@@ -178,6 +178,14 @@
       };
     };
     #######################################othersNixProject########################################
+    #=========================================nix-matlab==========================================#
+    nix-matlab = {
+      url = "gitlab:doronbehar/nix-matlab";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-compat.follows = "flake-compat";
+      };
+    };
     #================================A Nushell environment for Nix================================#
     nuenv = {
       url = "github:DeterminateSystems/nuenv";

@@ -8,6 +8,7 @@
   nixpkgs,
   lib,
   nur-enkaiyuegure,
+  nix-matlab,
   ...
 } @ args: {
   nixpkgs.overlays = [
@@ -16,6 +17,7 @@
     neovim.overlays.default
     emacs.overlays.default
     nur-enkaiyuegure.overlays.default
+    nix-matlab.overlay
   ];
 
   # auto upgrade nix to the unstable version
