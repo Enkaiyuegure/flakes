@@ -1,26 +1,11 @@
 {
   pkgs,
   pkgs-unstable,
-  pkgs-stable,
   ...
-}: let
-  usefulIcons = {
-    vivado = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/hmaarrfk/useful-icons/master/vivado-icons/vivado.png";
-      hash = "sha256-QE1ee5PCDFQivjIzg5be7UoWEXY7EYkQDeXMXNFkqbg=";
-    };
-  };
-  vivadoDesktop = pkgs.makeDesktopItem {
-    name = "vivado";
-    desktopName = "Vivado";
-    icon = "${usefulIcons.vivado}";
-    exec = "vivado";
-    terminal = false;
-  };
-in {
+}: {
   home.packages = with pkgs; [
     # creative
-    pkgs-stable.blender # 3d modeling
+    blender # 3d modeling
     gimp # image editing
     inkscape # vector graphics
     krita # digital painting
@@ -38,20 +23,12 @@ in {
     # risc-v
     rars
 
-    # matlab
-    matlab
-    matlab-shell
-    matlab-mlint
-    matlab-mex
-
     # fpga
     pkgs-unstable.python312Packages.apycula # gowin fpga
     pkgs-unstable.yosys # fpga synthesis
     pkgs-unstable.nextpnr # fpga place and route
     pkgs-unstable.openfpgaloader # fpga programming
     # nur-ryan4yin.packages.${pkgs.system}.gowin-eda-edu-ide # app: `gowin-env` => `gw_ide` / `gw_pack` / ...
-    vivado-2020_1
-    vivadoDesktop
   ];
 
   programs = {

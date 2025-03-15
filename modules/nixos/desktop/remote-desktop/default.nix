@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-stable,
   myLib,
   ...
 }: {
@@ -8,6 +9,6 @@
   environment.systemPackages = with pkgs; [
     waypipe
     moonlight-qt # moonlight client, for streaming games/desktop from a PC
-    rustdesk # p2p remote desktop
+    pkgs-stable.rustdesk # p2p remote desktop
   ];
 }
