@@ -9,6 +9,9 @@
     # do not support .pdf
     foliate
 
+    # AI
+    aichat
+
     # instant messaging
     telegram-desktop
     # discord # update too frequently, use the web version instead
@@ -20,7 +23,7 @@
     # misc
     flameshot
     ventoy # multi-boot usb creator
-    
+
     # This program allows you read and control device brightness
     brightnessctl
 
