@@ -8,6 +8,7 @@
   nixpkgs,
   lib,
   nur-enkaiyuegure,
+  nix-xilinx,
   nix-matlab,
   ...
 } @ args: {
@@ -17,6 +18,7 @@
     neovim.overlays.default
     emacs.overlays.default
     nur-enkaiyuegure.overlays.default
+    nix-xilinx.overlay
     nix-matlab.overlay
   ];
 

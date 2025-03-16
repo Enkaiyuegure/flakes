@@ -178,6 +178,14 @@
       };
     };
     #######################################othersNixProject########################################
+    #=========================================nix-xilinx==========================================#
+    nix-xilinx = {
+      url = "gitlab:doronbehar/nix-xilinx";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-compat.follows = "flake-compat";
+      };
+    };
     #=========================================nix-matlab==========================================#
     nix-matlab = {
       url = "gitlab:doronbehar/nix-matlab";

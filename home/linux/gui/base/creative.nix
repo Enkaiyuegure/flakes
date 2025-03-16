@@ -29,6 +29,20 @@
     pkgs-unstable.nextpnr # fpga place and route
     pkgs-unstable.openfpgaloader # fpga programming
     # nur-ryan4yin.packages.${pkgs.system}.gowin-eda-edu-ide # app: `gowin-env` => `gw_ide` / `gw_pack` / ...
+
+    # xilinx
+    vivado
+    vitis
+    vitis_hls
+    xilinx-shell
+    petalinux-install-shell
+    model_composer
+
+    # matlab
+    matlab
+    matlab-shell
+    matlab-mlint
+    matlab-mex
   ];
 
   programs = {
