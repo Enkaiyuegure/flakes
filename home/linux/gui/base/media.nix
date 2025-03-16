@@ -24,6 +24,7 @@
     go-musicfox
     spotify
     whipper # A CD ripper like EAC(Exact Audio Copy)
+    bilibili
   ];
 
   # https://github.com/catppuccin/cava
