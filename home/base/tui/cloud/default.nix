@@ -22,6 +22,8 @@
     aws-iam-authenticator
     eksctl
 
+    # baidu netdisk
+    baidupcs-go
     # aliyun
     aliyun-cli
     # digitalocean
