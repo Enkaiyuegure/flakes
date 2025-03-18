@@ -12,29 +12,32 @@
 } @ args: let
   name = "wu";
   base-modules = {
-    nixos-modules = (map myLib.relativeToRoot [
-      "hosts/system/${name}"
-      "modules/nixos/desktop"
-      "modules/base/dae.nix"
-      "hardening/nixpaks"
-    ])
-    ++ (with inputs; [
+    nixos-modules =
+      (map myLib.relativeToRoot [
+        "hosts/system/${name}"
+        "modules/nixos/desktop"
+        "modules/base/dae.nix"
+        "modules/base/clash.nix"
+        "hardening/nixpaks"
+      ])
+      ++ (with inputs; [
         disko.nixosModules.disko
-        impermanence.nixosModules.impermanence 
+        impermanence.nixosModules.impermanence
         lix-module.nixosModules.default
-    ]);
-    home-modules = (map myLib.relativeToRoot [
-      "hosts/user/${name}"
-      "home/linux/gui"
-    ])
-    ++ (with inputs; [
-      plasma-manager.homeManagerModules.plasma-manager
-    ]);
+      ]);
+    home-modules =
+      (map myLib.relativeToRoot [
+        "hosts/user/${name}"
+        "home/linux/gui"
+      ])
+      ++ (with inputs; [
+        plasma-manager.homeManagerModules.plasma-manager
+      ]);
   };
 
   # modules-{protocol}-{de}-{wm}
   modules-xorg-gnome-mutter = {
-    nixos-modules = 
+    nixos-modules =
       [
         {
           modules.nixos.desktop.xorg.enable = true;
@@ -42,7 +45,7 @@
         }
       ]
       ++ base-modules.nixos-modules;
-    home-modules = 
+    home-modules =
       [
         {
           home.linux.gui.gnome.enable = true;
@@ -52,7 +55,7 @@
   };
 
   modules-xorg-kde-kwin = {
-    nixos-modules = 
+    nixos-modules =
       [
         {
           modules.nixos.desktop.xorg.enable = true;
@@ -60,7 +63,7 @@
         }
       ]
       ++ base-modules.nixos-modules;
-    home-modules = 
+    home-modules =
       [
         {
           home.linux.gui.kde.enable = true;
@@ -70,14 +73,14 @@
   };
 
   modules-wayland-none-hyprland = {
-    nixos-modules = 
+    nixos-modules =
       [
         {
           modules.nixos.desktop.wayland.enable = true;
         }
       ]
       ++ base-modules.nixos-modules;
-    home-modules = 
+    home-modules =
       [
         {
           home.linux.gui.hyprland.enable = true;
@@ -87,7 +90,7 @@
   };
 
   modules-wayland-none-gamescope = {
-    nixos-modules = 
+    nixos-modules =
       [
         {
           modules.nixos.desktop.wayland.enable = true;
@@ -95,7 +98,7 @@
         }
       ]
       ++ base-modules.nixos-modules;
-    home-modules = 
+    home-modules =
       [
         {
           home.linux.gui.hyprland.enable = true;
@@ -103,7 +106,6 @@
       ]
       ++ base-modules.home-modules;
   };
-
 in {
   nixosConfigurations = {
     # host with hyprland compositor
