@@ -25,6 +25,9 @@
     spotify
     whipper # A CD ripper like EAC(Exact Audio Copy)
     bilibili
+    yutto
+    yt-dlp
+    youtube-tui
   ];
 
   # https://github.com/catppuccin/cava
