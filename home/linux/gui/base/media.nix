@@ -28,6 +28,7 @@
     yutto
     yt-dlp
     youtube-tui
+    youtube-music
   ];
 
   # https://github.com/catppuccin/cava
