@@ -1,13 +1,15 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    mitmproxy # http/https proxy tool
-    insomnia # REST client
-    wireshark # network analyzer
+  home.packages = with pkgs;
+    [
+      mitmproxy # http/https proxy tool
+      insomnia # REST client
+      wireshark # network analyzer
 
-    octaveFull # MATLAB liked Scientific Programming Language
+      (octaveFull.withPackages (ps: with ps; [statistics optim])) # MATLAB liked Scientific Programming Language
 
-    code-cursor # AI-powered code editor built on vscode
-  ] ++ (with pkgs.jetbrains; [
+      code-cursor # AI-powered code editor built on vscode
+    ]
+    ++ (with pkgs.jetbrains; [
       # IDEs
       idea-ultimate
       clion
@@ -16,5 +18,5 @@
       pycharm-professional
       webstorm
       phpstorm
-  ]);
+    ]);
 }
